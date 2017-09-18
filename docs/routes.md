@@ -1,9 +1,11 @@
 # Routes
 
 ## API Endpoints
-
+  
+  - POST /api/sessions - login
+  - DELETE /api/sessions - logout
+  
   - GET /api/users/:userId - returns user information
-  - POST /api/users - login
   
   - GET /api/projects - return all projects
   - POST /api/projects/new - creates new project
