@@ -2,8 +2,8 @@
 
 ## API Endpoints
   
-  - POST /api/sessions - login
-  - DELETE /api/sessions - logout
+  - POST /api/session - login
+  - DELETE /api/session - logout
   
   - GET /api/users/:userId - returns user information
   
