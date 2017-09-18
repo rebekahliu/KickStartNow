@@ -41,5 +41,11 @@
 | column name | data type | details |
 |----------|----------|------------|
 | id | integer | not null, indexed, primary key |
-| project_id  | integer | not null, indexed |
 | name | string | not null, unique |
+
+**Project Category**
+
+| column name | data type | details |
+|----------|----------|------------|
+| project_id | integer | not null, indexed |
+| category_id | integer | not null, indexed |
