@@ -18,8 +18,10 @@
   
   - GET /api/projects/:projectId/backings -returns all backing information for a project
   - POST /api/projects/:projectId/backings/new - creates new backing for a project
-  - PATCH /api/projects/:projectId/backings/:rewardId - edits reward information
-  - DELETE /api/projects/:projectId/backings/:rewardId - deletes reward
+  - PATCH /api/projects/:projectId/backings/:rewardId - edits backing information
+  - DELETE /api/projects/:projectId/backings/:rewardId - deletes backing
+  
+  -GET /api/category/:categoryid -return all projects under that category
   
 
 ## Frontend Routes
