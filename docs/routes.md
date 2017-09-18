@@ -21,7 +21,7 @@
   - PATCH /api/projects/:projectId/backings/:rewardId - edits backing information
   - DELETE /api/projects/:projectId/backings/:rewardId - deletes backing
   
-  -GET /api/category/:categoryid -return all projects under that category
+  - GET /api/category/:categoryid -return all projects under that category
   
 
 ## Frontend Routes
