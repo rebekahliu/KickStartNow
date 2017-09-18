@@ -31,6 +31,13 @@
   + Project Form Container + Project Form
     - routes: /#/projects/new
     - state: errors:projectform
+  + Category Index Container + Category Index
+    - routes: /#/categories/
+    - state: categories
+  + Category Search Container + Category Search Results
+    - routes: /#/categories/{category.id}
+    - state: category[:id]
+  
 - User
   + User Show Container + User Show
     - routes: /#/users/{user.id}
