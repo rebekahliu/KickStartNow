@@ -34,3 +34,5 @@
   - /#/projects/:projectId/rewards
   - /#/user
   - /#/user/new
+  - /#/categories
+  - /#/categories/:categoryId
