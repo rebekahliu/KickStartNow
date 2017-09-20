@@ -44,6 +44,7 @@ class SessionForm extends React.Component {
               <br />
                 <input onChange={this.handleChange('password')} value={this.state.password}></input>
               <button>{button}</button>
+
               {text} {link}
             </form>
           </div>
