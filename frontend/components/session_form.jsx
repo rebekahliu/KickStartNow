@@ -9,6 +9,11 @@ class SessionForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
+  }
+
+  componentWillMount(){
+    this.props.clearErrors();
   }
 
   handleSubmit(e) {
@@ -21,6 +26,10 @@ class SessionForm extends React.Component {
     return (e) => {
       this.setState({[type]: e.target.value});
     };
+  }
+
+  demoLogin(e){
+    this.props.login({username: 'demo_email@gmail.com', password: 'demopassword'});
   }
 
   render(){
@@ -36,15 +45,15 @@ class SessionForm extends React.Component {
       <div className='session-page'>
         <div className='session-form-border'>
           <div className='session-form'>
-            <form onSubmit={this.handleSubmit}>
+            <form>
               <h3>{header}</h3>
               {this.props.errors}
               <br />
-                <input onChange={this.handleChange('username')} value={this.state.username} />
+                <input onChange={this.handleChange('username')} value={this.state.username} placeholder='email'/>
               <br />
-                <input onChange={this.handleChange('password')} value={this.state.password}></input>
-              <button>{button}</button>
-
+                <input onChange={this.handleChange('password')} value={this.state.password} placeholder='password'></input>
+              <button onClick={this.handleSubmit}>{button}</button>
+              <button onClick={this.demoLogin}>Demo Login</button>
               {text} {link}
             </form>
           </div>

@@ -41,7 +41,11 @@ input {
   border: none;
   color: white;
   font-size: 15px;
-  margin-bottom: 120px;
+  margin-bottom: 30px;
+}
+
+.session-form button:hover {
+  cursor: pointer;
 }
 
 .session-link {

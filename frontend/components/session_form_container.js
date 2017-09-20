@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import SessionForm from './session_form';
-import {login, signup} from '../actions/session_actions';
+import {login, signup, clearSessionErrors} from '../actions/session_actions';
 import {withRouter} from 'react-router';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -12,7 +12,9 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
   processForm: ownProps.location.pathname.slice(1) === 'login' ?
     user => dispatch(login(user)) :
-    user => dispatch(signup(user))
+    user => dispatch(signup(user)),
+  clearErrors: () => dispatch(clearSessionErrors()),
+  login: user => dispatch(login(user))
 });
 
 export default withRouter(connect(
