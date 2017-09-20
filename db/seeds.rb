@@ -6,3 +6,36 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 user = User.create(username: 'demo_email@gmail.com', password: 'demopassword')
+user = User.create(username: 'liu.rebekah@gmail.com', password: 'password')
+user = User.create(username: 'john.smith@gmail.com', password: 'password')
+
+ActiveRecord::Base.transaction do
+  Project.destroy_all
+    project=Project.create(
+      title: 'PORCELAIN | Unique tableware for your home',
+      description: 'One of a kind porcelain plates to spruce up your table settings',
+      about: 'It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way-- in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only.',
+      user_id: 13,
+      goal_amount: 7000,
+      end_date: "1/1/2018",
+      category_id: 1
+    )
+    project=Project.create(
+      title: 'Projecting animals one at a time',
+      description: 'We are doing the good work of bringing animals in',
+      about: 'It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way-- in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only.',
+      user_id: 13,
+      goal_amount: 10000,
+      end_date: "6/1/2018",
+      category_id: 2
+    )
+    project=Project.create(
+      title: 'HOTChocolate: A new kind of hot chocolate',
+      description: 'Bring HOTChocolate to your next holiday gathering',
+      about: 'It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way-- in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only.',
+      user_id: 14,
+      goal_amount: 9000,
+      end_date: "3/1/2018",
+      category_id: 3
+    )
+end
