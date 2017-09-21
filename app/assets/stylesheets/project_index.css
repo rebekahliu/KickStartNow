@@ -1,0 +1,43 @@
+.project-index-container {
+  display: flex;
+  padding: 0px 100px;
+  justify-content: space-around;
+  line-height: 150%;
+}
+
+.index-item-container {
+  margin: 16px;
+  width: 393px;
+  height: 580px;
+  box-shadow: 0 2px 3px #bfc0c1;
+}
+
+.index-item-container img {
+  width: 393px;
+  height: 250px;
+}
+
+.index-item-details {
+  padding: 30px;
+}
+
+.index-item-details-top {
+}
+
+.index-item-category {
+  margin-bottom: 12px;
+}
+
+.index-item-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  line-height: 130%;
+}
+
+.index-item-details-bottom {
+  padding-top: 22px;
+}
+
+.index-item-details-bottom-info {
+
+}

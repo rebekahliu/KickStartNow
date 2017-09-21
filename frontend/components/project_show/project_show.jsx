@@ -23,20 +23,18 @@ class ProjectShow extends React.Component{
           </ul>
         </div>
         <div className='project-show-display'>
+          <div className='project-show-image'>
+            <img src={`${project.image_url}`} alt={`${project.title}`} />
+          </div>
           <div className='project-show-side'>
             <div type='progress'>
-              
+
             </div>
             <ul>
               <li>pledged of ${project.goal_amount} goal</li>
               <li>{daysToGo(project.end_date)}</li>
               <li>days to go</li>
             </ul>
-          </div>
-          <div className='project-show-image-container'>
-            <div className='project-show-image'>
-              <img src={`${project.image_url}`} alt={`${project.title}`} />
-            </div>
           </div>
         </div>
         <div className='project-show-details'>

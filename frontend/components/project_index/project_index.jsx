@@ -16,10 +16,8 @@ class ProjectIndex extends React.Component{
       <ProjectIndexItem project={project} key={project.id}/>
     ));
     return(
-      <div>
-        <ul>
-          {projectIndexItems}
-        </ul>
+      <div className='project-index-container'>
+        {projectIndexItems}
       </div>
     );
   }
