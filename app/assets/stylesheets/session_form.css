@@ -38,7 +38,6 @@ input {
   padding: 10px 20px;
   border-radius: 5px;
   background-color: #2BDE73;
-  border: none;
   color: white;
   font-size: 15px;
   margin-bottom: 30px;
@@ -49,7 +48,6 @@ input {
 }
 
 .session-link {
-  text-decoration: none;
   font-weight: bold;
   color: blue;
 }

@@ -19,7 +19,6 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger;
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
   }
@@ -31,7 +30,6 @@ class SessionForm extends React.Component {
   }
 
   demoLogin(e){
-    console.log('clicked demologin');
     const demo = ['demo_email@gmail.com', 'demopassword'];
     const username_arr = demo[0].split("");
     const password_arr = demo[1].split("");

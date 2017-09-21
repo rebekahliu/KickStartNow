@@ -24,10 +24,12 @@ const App = () => (
       </div>
 
     </header>
-    <Switch>
-      <Route exact path="/projects/:projectId" component={ProjectShowContainer} />
-      <Route path='/' component={ProjectIndexContainer} />
-    </Switch>
+    <div className='main-page'>
+      <Switch>
+        <Route exact path="/projects/:projectId" component={ProjectShowContainer} />
+        <Route path='/' component={ProjectIndexContainer} />
+      </Switch>
+    </div>
     <AuthRoute path='/login' component={SessionFormContainer} />
     <AuthRoute path='/signup' component={SessionFormContainer} />
   </div>

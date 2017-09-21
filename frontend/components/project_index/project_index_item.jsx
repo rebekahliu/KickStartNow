@@ -6,13 +6,15 @@ class ProjectIndexItem extends React.Component{
   render(){
     const {project} = this.props;
     return(
-      <li>
-        <Link to={`/projects/${project.id}`}>{project.title}</Link><br />
-        {project.description}<br />
-        {daysToGo(project.end_date)} days to go<br />
-        {project.user}<br />
-        %funded
-      </li>
+      <div className='index-item-continer'>
+        <li>
+          <Link to={`/projects/${project.id}`}>{project.title}</Link><br />
+          {project.description}<br />
+          {daysToGo(project.end_date)} days to go<br />
+          {project.user}<br />
+          %funded
+        </li>
+      </div>
     );
   }
 }

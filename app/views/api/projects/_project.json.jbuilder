@@ -3,6 +3,7 @@ json.extract! project, :title,
                        :user_id,
                        :goal_amount,
                        :end_date,
-                       :category_id
+                       :category_id,
+                       :image_url
 json.id project.id
 json.user project.user.name

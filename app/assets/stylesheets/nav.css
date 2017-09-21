@@ -36,7 +36,6 @@
 
 .top-nav-right a{
   color: black;
-  text-decoration: none;
   position: relative;
   margin: 0px 16px;
   padding-bottom: 17px;
@@ -47,8 +46,6 @@
 }
 
 .top-nav-right button{
-  text-decoration: none;
-  border: none;
   background-color: white;
   color: black;
   position: relative;
