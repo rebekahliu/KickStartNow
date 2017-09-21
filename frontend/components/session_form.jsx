@@ -6,7 +6,8 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      name: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
@@ -18,6 +19,7 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    debugger;
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
   }
@@ -38,8 +40,12 @@ class SessionForm extends React.Component {
     const link = this.props.formType === 'login' ?
       <Link to='/signup' className='session-link'>Sign Up</Link> :
       <Link to='/login' className='session-link'>Log In</Link>;
+    const nameInput = this.props.formType === 'login' ? "" :
+      <input onChange={this.handleChange('name')} value={this.state.name} placeholder='name'/>;
     const text = this.props.formType === 'login' ? "New to Kickstartnow?" : "Already have an account?" ;
     const button = this.props.formType === 'login' ? "Log me in!" : "Create Account" ;
+    const demoLoginButton = this.props.formType === 'login' ?
+      <button onClick={this.demoLogin}>Demo Login</button> : "";
 
     return(
       <div className='session-page'>
@@ -49,12 +55,15 @@ class SessionForm extends React.Component {
               <h3>{header}</h3>
               {this.props.errors}
               <br />
+                {nameInput}
                 <input onChange={this.handleChange('username')} value={this.state.username} placeholder='email'/>
               <br />
                 <input onChange={this.handleChange('password')} value={this.state.password} placeholder='password'></input>
               <button onClick={this.handleSubmit}>{button}</button>
-              <button onClick={this.demoLogin}>Demo Login</button>
-              {text} {link}
+              {demoLoginButton}
+              <div className='bottom-text'>
+                {text} {link}
+              </div>
             </form>
           </div>
         </div>
