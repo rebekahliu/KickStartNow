@@ -1,31 +1,23 @@
 import React from 'react';
+import {daysToGo} from '../../util/project_util';
 
 class ProjectShow extends React.Component{
-  constructor(props){
-    super(props);
-  }
-
   componentWillMount() {
-    this.props.getProject(this.props.match.params.projectId);
-  }
-
-  daysToGo(){
-    return (this.daydiff(new Date(), new Date(this.props.project.end_date)));
-  }
-
-  daydiff(date1, date2) {
-    return Math.round((date2-date1)/(1000*60*60*24));
+    this.props.getProject(this.props.match.params.projectId)
+      .then(() => this.forceUpdate());
   }
 
   render(){
     const {project} = this.props;
+    if (!project) return null;
+
     return(
       <ul>
         <li>{project.title}</li>
         <li>{project.user}</li>
         <li>{project.description}</li>
         <li>{project.goal_amount}</li>
-        <li>{this.daysToGo()} days to go</li>
+        <li>{daysToGo(project.end_date)} days to go</li>
       </ul>
     );
   }

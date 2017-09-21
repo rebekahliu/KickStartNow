@@ -1,1 +1,2 @@
-json.extract! @project, :title, :description, :about, :user_id, :goal_amount, :end_date, :category_id
+json.partial! 'api/projects/project', project: @project
+json.about @project.about
