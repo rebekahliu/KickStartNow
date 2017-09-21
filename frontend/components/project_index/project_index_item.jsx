@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class ProjectIndexItem extends React.Component{
   constructor(props){
@@ -20,13 +20,13 @@ class ProjectIndexItem extends React.Component{
   render(){
     const {project} = this.props;
     return(
-      <ul>
-        <Link></Link>
-        <li>{project.description}</li>
-        <li>{this.daysToGo()} days to go</li>
-        <li>{project.user}</li>
-        <li>%funded</li>
-      </ul>
+      <li>
+        <Link to={`/projects/${project.id}`}>{project.title}</Link><br />
+        {project.description}<br />
+        {this.daysToGo()} days to go<br />
+        {project.user}<br />
+        %funded
+      </li>
     );
   }
 }

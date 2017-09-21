@@ -1,7 +1,7 @@
 import React from 'react';
 import GreetingContainer from './greeting_container';
 import SessionFormContainer from './session_form_container';
-import {Route} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import {AuthRoute} from '../util/route_util';
 import ProjectIndexContainer from './project_index/project_index_container';
 import ProjectShowContainer from './project_show/project_show_container';
@@ -22,8 +22,12 @@ const App = () => (
           <GreetingContainer />
         </div>
       </div>
+
     </header>
-    <ProjectIndexContainer />
+    <Switch>
+      <Route exact path="/projects/:projectId" component={ProjectShowContainer} />
+      <Route path='/' component={ProjectIndexContainer} />
+    </Switch>
     <AuthRoute path='/login' component={SessionFormContainer} />
     <AuthRoute path='/signup' component={SessionFormContainer} />
   </div>

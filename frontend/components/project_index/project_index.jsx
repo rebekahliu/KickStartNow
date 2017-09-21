@@ -16,7 +16,9 @@ class ProjectIndex extends React.Component{
     ));
     return(
       <div>
-        {projectIndexItems}
+        <ul>
+          {projectIndexItems}
+        </ul>
       </div>
     );
   }
