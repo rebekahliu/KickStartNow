@@ -16,7 +16,7 @@ class ProjectForm extends React.Component{
       category_id: 1,
       end_date: "",
       goal_amount: 0,
-      user_id: this.props.currentUser.id
+      user_id: ""
     };
 
     this.changeForm = this.changeForm.bind(this);
@@ -50,6 +50,7 @@ class ProjectForm extends React.Component{
     delete project['step'];
     project['category_id'] = parseInt(project['category_id']);
     project['goal_amount'] = parseInt(project['goal_amount']);
+    project['user_id'] = this.props.currentUser.id;
     this.props.createProject(project)
       .then(() => this.props.history.push(`/projects/${this.props.project.id}`));
   }
