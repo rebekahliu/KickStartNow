@@ -1,4 +1,9 @@
 .project-new-page {
+  background-color: #F7F5F2;
+  height: 100vh;
+}
+
+.project-new-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,22 +16,27 @@
 }
 
 .button {
-  border: 1px black solid;
+  border: 1px #c4c4c4 solid;
   padding: 20px;
   font-size: 15px;
+  color: #c4c4c4;
+  background-color: white;
+}
+
+.button i{
+  margin-right: 5px;
 }
 
 .button button {
   font-size: 15px;
   font-weight: bold;
   background-color: inherit;
+  padding: 0px;
+  color: #2b3056;
 }
 
 .button button:focus {
   outline: 0;
-}
-
-.button button:active {
   color: blue;
 }
 
@@ -40,4 +50,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+}
+
+.project-new-partial form {
+  border: 1px #c4c4c4 solid;
+  padding: 18px 12px;
+  background-color: white;
 }

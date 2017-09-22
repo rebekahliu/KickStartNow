@@ -99,8 +99,10 @@ class ProjectForm extends React.Component{
   render(){
     return(
       <div className='project-new-page'>
-        {this.navBar()}
-        {this.partialForm()}
+        <div className='project-new-wrapper'>
+          {this.navBar()}
+          {this.partialForm()}
+        </div>
       </div>
     );
   }

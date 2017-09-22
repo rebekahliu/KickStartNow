@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
+    this.errors = this.errors.bind(this);
   }
 
   componentWillMount(){
@@ -46,6 +47,13 @@ class SessionForm extends React.Component {
     const stop = setInterval(shiftFunction, 60);
   }
 
+  errors(){
+    console.log(this.props.errors);
+    return this.props.errors.map((error) => (
+      <li>{error}</li>
+    ));
+  }
+
   render(){
     if (this.props.loggedIn) return <Redirect to='/' />;
     const header = this.props.formType === 'login' ? "Log In" : "Sign Up";
@@ -60,9 +68,9 @@ class SessionForm extends React.Component {
     const text = this.props.formType === 'login' ? "New to Kickstartnow?" : "Already have an account?" ;
 
     const button = this.props.formType === 'login' ? "Log me in!" : "Create Account" ;
-    
-    const demoLoginButton = this.props.formType === 'login' ?
-      <button onClick={this.demoLogin}>Demo Login</button> : "";
+
+    // const demoLoginButton = this.props.formType === 'login' ?
+    //    : "";
 
     return(
       <div className='session-page'>
@@ -70,14 +78,18 @@ class SessionForm extends React.Component {
           <div className='session-form'>
             <form>
               <h3>{header}</h3>
-              {this.props.errors}
+              <div className='session-form-errors'>
+                <ul>
+                  {this.errors()}
+                </ul>
+              </div>
               <br />
                 {nameInput}
                 <input onChange={this.handleChange('username')} value={this.state.username} placeholder='email'/>
               <br />
-                <input onChange={this.handleChange('password')} value={this.state.password} placeholder='password'></input>
+                <input type='password' onChange={this.handleChange('password')} value={this.state.password} placeholder='password'></input>
               <button onClick={this.handleSubmit}>{button}</button>
-              {demoLoginButton}
+              <button onClick={this.demoLogin}>Demo Login</button>
               <div className='bottom-text'>
                 {text} {link}
               </div>

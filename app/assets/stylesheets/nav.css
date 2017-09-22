@@ -10,17 +10,20 @@
   z-index:0;
 }
 
-.top-nav img{
+.top-nav img {
   height: 20px;
   width: 165px;
 }
 
 .top-nav-right {
+  width: 150px;
+  display: flex;
+  justify-content: flex-end;
   text-align: center;
   font-size: 15px;
 }
 
-.top-nav-right a{
+.top-nav-right a {
   color: black;
   position: relative;
   margin: 0px 16px;
@@ -31,7 +34,11 @@
   border-bottom: #32e580 5px solid;
 }
 
-.top-nav-left a{
+.top-nav-left {
+  width: 150px;
+}
+
+.top-nav-left a {
   color: black;
   position: relative;
   margin: 0px 16px;
@@ -42,7 +49,7 @@
   border-bottom: #32e580 5px solid;
 }
 
-.top-nav-right button{
+.top-nav-right button {
   background-color: white;
   color: black;
   position: relative;

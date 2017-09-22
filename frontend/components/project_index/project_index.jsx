@@ -11,7 +11,6 @@ class ProjectIndex extends React.Component{
   }
 
   render(){
-    console.log('render index');
     const projectIndexItems = this.props.projects.map((project) => (
       <ProjectIndexItem project={project} key={project.id}/>
     ));

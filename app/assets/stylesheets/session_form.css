@@ -13,13 +13,22 @@
 .session-form {
   padding: 20px;
   width: 358px;
-  height: 440px;
+  min-height: 440px;
+  overflow: hidden;
   font-family: 'Roboto', sans-serif;
+}
+
+.session-form-errors {
+  line-height: 130%;
+  color: red;
 }
 
 h3 {
   font-weight: lighter;
   font-size: 30px;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 0px;
 }
 
 input {
