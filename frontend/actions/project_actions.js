@@ -1,4 +1,4 @@
-import {indexProjects, showProjects} from '../util/project_api_util';
+import {indexProjects, showProjects, postProject} from '../util/project_api_util';
 
 export const RECEIVE_PROJECTS = 'RECEIVE_PROJECTS';
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
@@ -20,5 +20,10 @@ export const getProjects = () => dispatch => (
 
 export const getProject = projectId => dispatch => (
   showProjects(projectId)
+    .then(project => dispatch(receiveProject(project)))
+);
+
+export const createProject = formProject => dispatch => (
+  postProject(formProject)
     .then(project => dispatch(receiveProject(project)))
 );

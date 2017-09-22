@@ -11,3 +11,11 @@ export const showProjects = (projectId) => {
     url: `/api/projects/${projectId}`
   });
 };
+
+export const postProject = project => {
+  return $.ajax({
+    method: 'POST',
+    url: '/api/projects',
+    data: {project}
+  });
+};

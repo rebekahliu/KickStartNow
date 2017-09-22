@@ -30,6 +30,7 @@ class SessionForm extends React.Component {
   }
 
   demoLogin(e){
+    e.preventDefault();
     const demo = ['demo_email@gmail.com', 'demopassword'];
     const username_arr = demo[0].split("");
     const password_arr = demo[1].split("");
