@@ -10,7 +10,7 @@ class BasicForm extends React.Component{
         <h4>Make a great first impression with your project’s title and image.</h4>
           <form>
             <label>Category</label><br />
-            <input onChange={saveValues('category')} value={category}></input>
+            <input type="number" onChange={saveValues('category')} value={category}></input>
             <br />
             <label>Title</label><br />
             <input onChange={saveValues('title')} value={title}></input>
@@ -22,7 +22,7 @@ class BasicForm extends React.Component{
             <input type='date' onChange={saveValues('end_date')} value={end_date}></input>
             <br />
             <label>Goal Amount</label><br />
-            <input onChange={saveValues('goal_amount')} value={goal_amount}></input>
+            <input type="number" onChange={saveValues('goal_amount')} value={goal_amount}></input>
           </form>
       </div>
     );

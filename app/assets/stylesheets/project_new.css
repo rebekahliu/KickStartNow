@@ -14,16 +14,25 @@
   border: 1px black solid;
   padding: 20px;
   font-size: 15px;
-  width: auto;
 }
 
 .button button {
   font-size: 15px;
+  font-weight: bold;
   background-color: inherit;
+}
+
+.button button:focus {
+  outline: 0;
+}
+
+.button button:active {
+  color: blue;
 }
 
 .button button:hover {
   color: blue;
+  cursor: pointer;
 }
 
 .project-new-partial {

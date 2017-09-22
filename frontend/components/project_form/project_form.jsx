@@ -1,4 +1,5 @@
 import React from 'react';
+import {Redirect} from 'react-router-dom';
 import BasicForm from './basic_form';
 import RewardsForm from './rewards_form';
 import AboutForm from './about_form';
@@ -12,9 +13,10 @@ class ProjectForm extends React.Component{
       title: "hello",
       description: "",
       about: "",
-      category: "art",
+      category_id: 1,
       end_date: "",
-      goal_amount: ""
+      goal_amount: 0,
+      user_id: this.props.currentUser.id
     };
 
     this.changeForm = this.changeForm.bind(this);
@@ -42,17 +44,14 @@ class ProjectForm extends React.Component{
     };
   }
 
-
   handleSubmit(e){
     e.preventDefault();
     const project = Object.assign({}, this.state);
-    const _defaultForm = {
-      step: 0,
-      title: "",
-      description: ""
-    };
-    this.state = _defaultForm;
-    this.props.createProject(project);
+    delete project['step'];
+    project['category_id'] = parseInt(project['category_id']);
+    project['goal_amount'] = parseInt(project['goal_amount']);
+    this.props.createProject(project)
+      .then(() => this.props.history.push(`/projects/${this.props.project.id}`));
   }
 
   navBar(){
@@ -97,7 +96,6 @@ class ProjectForm extends React.Component{
   }
 
   render(){
-    console.log(this.state);
     return(
       <div className='project-new-page'>
         {this.navBar()}
