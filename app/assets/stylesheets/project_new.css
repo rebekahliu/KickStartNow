@@ -1,0 +1,34 @@
+.project-new-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 50px;
+}
+
+.project-new-nav {
+  padding-bottom: 50px;
+}
+
+.button {
+  border: 1px black solid;
+  padding: 20px;
+  font-size: 15px;
+  width: auto;
+}
+
+.button button {
+  font-size: 15px;
+  background-color: inherit;
+}
+
+.button button:hover {
+  color: blue;
+}
+
+.project-new-partial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}

@@ -43,19 +43,24 @@ class SessionForm extends React.Component {
         clearInterval(stop);
         this.props.login(this.state);
       }}.bind(this);
-    const stop = setInterval(shiftFunction, 100);
+    const stop = setInterval(shiftFunction, 60);
   }
 
   render(){
     if (this.props.loggedIn) return <Redirect to='/' />;
     const header = this.props.formType === 'login' ? "Log In" : "Sign Up";
+
     const link = this.props.formType === 'login' ?
       <Link to='/signup' className='session-link'>Sign Up</Link> :
       <Link to='/login' className='session-link'>Log In</Link>;
+
     const nameInput = this.props.formType === 'login' ? "" :
       <input onChange={this.handleChange('name')} value={this.state.name} placeholder='name'/>;
+
     const text = this.props.formType === 'login' ? "New to Kickstartnow?" : "Already have an account?" ;
+
     const button = this.props.formType === 'login' ? "Log me in!" : "Create Account" ;
+    
     const demoLoginButton = this.props.formType === 'login' ?
       <button onClick={this.demoLogin}>Demo Login</button> : "";
 

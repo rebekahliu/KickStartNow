@@ -3,7 +3,9 @@ import React from 'react';
 class RewardsForm extends React.Component{
   render(){
     return(
-      <h1>Rewards Form</h1>
+      <div className='project-new-partial'>
+        <h2>Rewards Form</h2>
+      </div>
     );
   }
 }

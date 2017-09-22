@@ -7,7 +7,7 @@ class Greeting extends React.Component{
 
     this.logout = this.props.logout;
     this.handleClick = this.handleClick.bind(this);
-    this.greeting = this.greeting.bind(this);
+    this.sessionButtons = this.sessionButtons.bind(this);
   }
 
   handleClick(){
@@ -17,7 +17,7 @@ class Greeting extends React.Component{
     };
   }
 
-  greeting(){
+  sessionButtons(){
     if (this.props.currentUser){
       return (
         <div>
@@ -36,8 +36,16 @@ class Greeting extends React.Component{
 
   render(){
     return(
-      <div>
-        {this.greeting()}
+      <div className='top-nav'>
+        <div className='top-nav-left'>
+          <Link to='/project/new'>Start a project</Link>
+        </div>
+        <Link to='/'>
+          <img src='/assets/logo.png' />
+        </Link>
+        <div className='top-nav-right'>
+          {this.sessionButtons()}
+        </div>
       </div>
     );
   }

@@ -10,19 +10,7 @@ import ProjectFormContainer from './project_form/project_form_container';
 const App = () => (
   <div>
     <header>
-      <div className='top-nav'>
-        <div className='top-nav-left'>
-          <a>placeholder</a>
-        </div>
-        <div className='top-nav-center'>
-          <h1 className='kick'>KICK</h1>
-          <h1 className='startnow'>STARTNOW</h1>
-        </div>
-        <div className='top-nav-right'>
-          <GreetingContainer />
-        </div>
-      </div>
-
+      <GreetingContainer />
     </header>
     <div className='main-page'>
       <Switch>

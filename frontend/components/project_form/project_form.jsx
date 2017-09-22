@@ -11,7 +11,10 @@ class ProjectForm extends React.Component{
       step: 0,
       title: "hello",
       description: "",
-      category: ""
+      about: "",
+      category: "art",
+      end_date: "",
+      goal_amount: ""
     };
 
     this.changeForm = this.changeForm.bind(this);
@@ -54,11 +57,23 @@ class ProjectForm extends React.Component{
 
   navBar(){
     return (
-      <div>
-        <button onClick={this.changeForm('basic')}>Basics</button>
-        <button onClick={this.changeForm('rewards')}>Rewards</button>
-        <button onClick={this.changeForm('about')}>Story</button>
-        <button onClick={this.handleSubmit}>Submit</button>
+      <div className='project-new-nav'>
+        <span className='button'>
+          <i className="fa fa-check-circle"></i>
+          <button onClick={this.changeForm('basic')}>Basics</button>
+        </span>
+        <span className='button'>
+          <i className="fa fa-check-circle"></i>
+          <button onClick={this.changeForm('rewards')}>Rewards</button>
+        </span>
+        <span className='button'>
+          <i className="fa fa-check-circle"></i>
+          <button onClick={this.changeForm('about')}>Story</button>
+        </span>
+        <span className='button'>
+          <i className="fa fa-check-circle"></i>
+          <button onClick={this.handleSubmit}>Submit</button>
+        </span>
       </div>
     );
   }
@@ -67,7 +82,8 @@ class ProjectForm extends React.Component{
     switch(this.state.step){
       case 0:
         return <EntryForm fieldVals={this.state}
-                        saveValues={this.saveValues}/>;
+                        saveValues={this.saveValues}
+                        changeForm={this.changeForm}/>;
       case 1:
         return <BasicForm fieldVals={this.state}
                         saveValues={this.saveValues}/>;
@@ -81,8 +97,9 @@ class ProjectForm extends React.Component{
   }
 
   render(){
+    console.log(this.state);
     return(
-      <div>
+      <div className='project-new-page'>
         {this.navBar()}
         {this.partialForm()}
       </div>
