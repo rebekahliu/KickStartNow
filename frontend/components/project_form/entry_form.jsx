@@ -3,13 +3,13 @@ import React from 'react';
 class EntryForm extends React.Component{
   render(){
     const {saveValues, changeForm} = this.props;
-    const {image_url, title, description, category, end_date, funding_goal} = this.props.fieldVals;
+    const {image_url, title, description, category_id, end_date, funding_goal} = this.props.fieldVals;
     return(
       <div className='project-new-partial'>
         <h2>Get Started</h2>
         <form>
           <label>Category</label><br />
-          <input onChange={saveValues('category')} value={category}></input>
+          <input onChange={saveValues('category_id')} value={category_id}></input>
           <br />
           <label>Title</label><br />
           <input onChange={saveValues('title')} value={title}></input>

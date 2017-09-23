@@ -57,3 +57,32 @@
   padding: 18px 12px;
   background-color: white;
 }
+
+.project-new-partial textarea {
+  height: 100px;
+}
+
+.dropzone {
+  width: 332px;
+  height: 17px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  border: 1px #bfc0c1 dashed;
+  padding: 12px;
+  font-size: 15px;
+}
+
+.dropzone:hover {
+  cursor: pointer;
+}
+
+.image-show p {
+  text-align: center;
+  padding-bottom: 13px;
+}
+
+.image-show img {
+  width: 332px;
+  height: auto;
+  padding: 12px;
+}

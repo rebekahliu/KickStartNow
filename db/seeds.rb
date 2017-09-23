@@ -17,7 +17,7 @@ project=Project.create(
   goal_amount: 7000,
   end_date: "1/1/2018",
   category_id: 1,
-  image_url: 'http://res.cloudinary.com/rebekahliu/image/upload/v1506013961/hot-2574466_1920_wp6jkh.jpg'
+  image_url: 'http://res.cloudinary.com/rebekahliu/image/upload/v1506133644/hot-2574466_1920_dowvqm.jpg'
 )
 project=Project.create(
   title: 'Projecting animals one at a time',
@@ -27,7 +27,7 @@ project=Project.create(
   goal_amount: 10000,
   end_date: "6/1/2018",
   category_id: 2,
-  image_url: 'http://res.cloudinary.com/rebekahliu/image/upload/v1506014459/pug-690566_1920_ugergb.jpg'
+  image_url: 'http://res.cloudinary.com/rebekahliu/image/upload/c_fill,h_576,w_1024/v1506133644/pug-690566_1920_vuwuox.jpg'
 )
 
 project=Project.create(
@@ -38,5 +38,5 @@ project=Project.create(
   goal_amount: 9000,
   end_date: "3/1/2018",
   category_id: 3,
-  image_url: 'http://res.cloudinary.com/rebekahliu/image/upload/v1506014459/hot-chocolate-1782623_1920_za4tnp.jpg'
+  image_url: 'http://res.cloudinary.com/rebekahliu/image/upload/v1506133644/hot-chocolate-1782623_1920_ybcmvd.jpg'
 )

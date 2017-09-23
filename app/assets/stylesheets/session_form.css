@@ -31,7 +31,7 @@ h3 {
   margin-bottom: 0px;
 }
 
-input {
+input, textarea{
   width: 332px;
   height: 17px;
   border-radius: 5px;

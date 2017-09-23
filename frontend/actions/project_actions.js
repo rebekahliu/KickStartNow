@@ -1,7 +1,8 @@
-import {indexProjects, showProjects, postProject} from '../util/project_api_util';
+import {indexProjects, showProjects, postProject, patchProject, deleteProject} from '../util/project_api_util';
 
 export const RECEIVE_PROJECTS = 'RECEIVE_PROJECTS';
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
+export const REMOVE_PROJECT = 'REMOVE_PROJECT';
 
 export const receiveProjects = projects => ({
   type: RECEIVE_PROJECTS,
@@ -10,6 +11,11 @@ export const receiveProjects = projects => ({
 
 export const receiveProject = project => ({
   type: RECEIVE_PROJECT,
+  project
+});
+
+export const removeProject = project => ({
+  type: REMOVE_PROJECT,
   project
 });
 
@@ -26,4 +32,14 @@ export const getProject = projectId => dispatch => (
 export const createProject = formProject => dispatch => (
   postProject(formProject)
     .then(project => dispatch(receiveProject(project)))
+);
+
+export const updateProject = formProject => dispatch => (
+  patchProject(formProject)
+    .then(project => dispatch(receiveProject(project)))
+);
+
+export const destroyProject = projectId => dispatch => (
+  deleteProject(projectId)
+    .then(project => dispatch(removeProject(project)))
 );

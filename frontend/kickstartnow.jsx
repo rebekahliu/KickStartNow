@@ -5,7 +5,7 @@ import Root from './components/root';
 
 //for testing//
 import {receiveProjects, receiveProject, logout} from './actions/project_actions';
-import {getProjects, getProject, createProject} from './actions/project_actions';
+import {getProjects, getProject, createProject, destroyProject} from './actions/project_actions';
 //for testing//
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getProjects = getProjects;
   window.getProject = getProject;
   window.createProject = createProject;
+  window.destroyProject = destroyProject;
   //for testing//
 
   ReactDOM.render(<Root store={store}/>, root);

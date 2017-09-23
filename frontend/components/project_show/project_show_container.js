@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {getProject} from '../../actions/project_actions';
+import {getProject, destroyProject} from '../../actions/project_actions';
 import ProjectShow from './project_show';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -7,7 +7,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getProject: (projectId) => dispatch(getProject(projectId))
+  getProject: projectId => dispatch(getProject(projectId)),
+  removeProject: projectId => dispatch(destroyProject(projectId))
 });
 
 export default connect(

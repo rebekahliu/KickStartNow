@@ -1,14 +1,29 @@
 import React from 'react';
 import {daysToGo} from '../../util/project_util';
+import {Link} from 'react-router-dom';
 
 class ProjectShow extends React.Component{
+  constructor(props){
+    super(props);
+
+    this.removeProject = this.removeProject.bind(this);
+  }
+
   componentWillMount() {
     this.props.getProject(this.props.match.params.projectId)
       .then(() => this.forceUpdate());
   }
 
+  removeProject(projectId) {
+    return (e) => {
+      e.preventDefault();
+      this.props.removeProject(projectId)
+        .then(() => this.props.history.push(`/`));
+    };
+  }
+
   render(){
-    const {project} = this.props;
+    const {project, removeProject} = this.props;
     if (!project) return null;
 
     return(
@@ -34,6 +49,8 @@ class ProjectShow extends React.Component{
               <li>pledged of ${project.goal_amount} goal</li>
               <li>{daysToGo(project.end_date)}</li>
               <li>days to go</li>
+              <Link to='/project/update'>Edit Project</Link>
+              <button onClick={this.removeProject(project.id)}>Delete Project</button>
             </ul>
           </div>
         </div>

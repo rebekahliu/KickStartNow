@@ -10,7 +10,7 @@ class AboutForm extends React.Component{
         <h4>Get specific about why people should be excited about your project.</h4>
         <form>
           <label>Project Description</label><br />
-          <input type='text' onChange={saveValues('about')} value={about}></input>
+          <textarea onChange={saveValues('about')} value={about}></textarea>
         </form>
       </div>
     );

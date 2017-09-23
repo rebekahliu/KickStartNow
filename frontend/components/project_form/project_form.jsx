@@ -13,15 +13,23 @@ class ProjectForm extends React.Component{
       title: "hello",
       description: "",
       about: "",
-      category_id: 1,
+      category_id: 0,
       end_date: "",
       goal_amount: 0,
-      user_id: ""
+      user_id: "",
+      image_url: ""
     };
 
     this.changeForm = this.changeForm.bind(this);
     this.saveValues = this.saveValues.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.saveImageURL = this.saveImageURL.bind(this);
+  }
+
+  componentWillMount(){
+    if (this.props.formType === 'update'){
+      this.setState(this.props.project);
+    }
   }
 
   changeForm(type){
@@ -44,14 +52,20 @@ class ProjectForm extends React.Component{
     };
   }
 
+  saveImageURL(imageURL){
+    console.log('saved image url');
+    this.setState({image_url: imageURL});
+  }
+
   handleSubmit(e){
     e.preventDefault();
+    debugger;
     const project = Object.assign({}, this.state);
     delete project['step'];
     project['category_id'] = parseInt(project['category_id']);
     project['goal_amount'] = parseInt(project['goal_amount']);
     project['user_id'] = this.props.currentUser.id;
-    this.props.createProject(project)
+    this.props.processForm(project)
       .then(() => this.props.history.push(`/projects/${this.props.project.id}`));
   }
 
@@ -82,17 +96,18 @@ class ProjectForm extends React.Component{
     switch(this.state.step){
       case 0:
         return <EntryForm fieldVals={this.state}
-                        saveValues={this.saveValues}
-                        changeForm={this.changeForm}/>;
+                          saveValues={this.saveValues}
+                          changeForm={this.changeForm}/>;
       case 1:
         return <BasicForm fieldVals={this.state}
-                        saveValues={this.saveValues}/>;
+                          saveValues={this.saveValues}
+                          saveImageURL={this.saveImageURL}/>;
       case 2:
         return <RewardsForm fieldVals={this.state}
-                          saveValues={this.saveValues}/>;
+                            saveValues={this.saveValues}/>;
       case 3:
         return <AboutForm fieldVals={this.state}
-                        saveValues={this.saveValues}/>;
+                          saveValues={this.saveValues}/>;
     }
   }
 
