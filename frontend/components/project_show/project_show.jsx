@@ -1,12 +1,14 @@
 import React from 'react';
 import {daysToGo} from '../../util/project_util';
 import {Link} from 'react-router-dom';
+import RewardItem from '../reward/reward_show';
 
 class ProjectShow extends React.Component{
   constructor(props){
     super(props);
 
     this.removeProject = this.removeProject.bind(this);
+    this.rewardIndex = this.rewardIndex.bind(this);
   }
 
   componentWillMount() {
@@ -22,8 +24,18 @@ class ProjectShow extends React.Component{
     };
   }
 
+  rewardIndex() {
+    if (this.props.project.rewards){
+      return this.props.project.rewards.map((reward) => (
+        <RewardItem reward={reward} />
+      ));
+    } else {
+      return "";
+    }
+  }
+
   render(){
-    const {project, removeProject} = this.props;
+    const {project, removeProject, rewards} = this.props;
     if (!project) return null;
 
     return(
@@ -59,11 +71,7 @@ class ProjectShow extends React.Component{
             {project.about}
           </div>
           <div className='project-show-rewards'>
-            <ul>
-              <li>Rewards</li>
-              <li>Rewards</li>
-              <li>Rewards</li>
-            </ul>
+            {this.rewardIndex()}
           </div>
         </div>
       </div>

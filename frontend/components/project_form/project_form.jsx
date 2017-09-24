@@ -17,13 +17,21 @@ class ProjectForm extends React.Component{
       end_date: "",
       goal_amount: 0,
       user_id: "",
-      image_url: ""
+      image_url: "",
+      rewards: [{
+        title: "",
+        description: "",
+        pledge_amount: "",
+        estimated_delivery: ""
+      }]
     };
 
     this.changeForm = this.changeForm.bind(this);
     this.saveValues = this.saveValues.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.saveImageURL = this.saveImageURL.bind(this);
+    this.saveRewardValues = this.saveRewardValues.bind(this);
+    this.handleAddReward = this.handleAddReward.bind(this);
   }
 
   componentWillMount(){
@@ -52,21 +60,46 @@ class ProjectForm extends React.Component{
     };
   }
 
+  saveRewardValues(type, idx){
+    return (e) => {
+      const newRewards = this.state.rewards.map((reward, sidx) => {
+        if (idx !== sidx) return reward;
+        return Object.assign({}, reward, {[type]: e.target.value});
+      });
+
+      this.setState({ rewards: newRewards });
+    };
+  }
+
+  handleAddReward(e){
+    e.preventDefault();
+    this.setState({
+      rewards: this.state.rewards.concat([{title: "",
+                                           description: "",
+                                           pledge_amount: "",
+                                           estimated_delivery: ""
+                                         }])
+   });
+ }
+
   saveImageURL(imageURL){
-    console.log('saved image url');
     this.setState({image_url: imageURL});
   }
 
   handleSubmit(e){
     e.preventDefault();
-    debugger;
     const project = Object.assign({}, this.state);
     delete project['step'];
     project['category_id'] = parseInt(project['category_id']);
     project['goal_amount'] = parseInt(project['goal_amount']);
     project['user_id'] = this.props.currentUser.id;
     this.props.processForm(project)
+      .then(() => this.state.rewards.forEach((reward) => this.props.createReward(reward, this.props.project.id)))
       .then(() => this.props.history.push(`/projects/${this.props.project.id}`));
+  }
+
+  createRewards(){
+
   }
 
   navBar(){
@@ -104,7 +137,8 @@ class ProjectForm extends React.Component{
                           saveImageURL={this.saveImageURL}/>;
       case 2:
         return <RewardsForm fieldVals={this.state}
-                            saveValues={this.saveValues}/>;
+                            saveRewardValues={this.saveRewardValues}
+                            handleAddReward={this.handleAddReward}/>;
       case 3:
         return <AboutForm fieldVals={this.state}
                           saveValues={this.saveValues}/>;

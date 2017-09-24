@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :sessions, only: [:create, :destroy]
     resources :projects, only: [:create, :index, :show, :update, :destroy]
+    resources :rewards, only: [:create]
   end
 end

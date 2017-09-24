@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import {getProject, destroyProject} from '../../actions/project_actions';
 import ProjectShow from './project_show';
+import {selectProjectRewards} from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => ({
   project: state.entities.project
