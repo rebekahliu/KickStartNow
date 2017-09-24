@@ -8,7 +8,7 @@ class ProjectIndexItem extends React.Component{
     return(
       <div className='index-item-container'>
         <Link to={`/projects/${project.id}`} className='index-item-image-link'>
-          //img
+          <img src={`${project.image_url}`} alt={`${project.title}`} />
         </ Link>
         <div className='index-item-details'>
           <div className='index-item-details-top'>

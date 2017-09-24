@@ -40,37 +40,44 @@ class ProjectShow extends React.Component{
 
     return(
       <div className='show-container'>
-        <div className='project-show-header'>
-          <ul className= 'project-show-header-left'>
-            <li>{project.user}</li>
-          </ul>
-          <ul className= 'project-show-header-right'>
-            <li>{project.title}</li>
-            <li>{project.description}</li>
-          </ul>
-        </div>
-        <div className='project-show-display'>
-          <div className='project-show-image'>
-            <img src={`${project.image_url}`} alt={`${project.title}`} />
-          </div>
-          <div className='project-show-side'>
-            <div type='progress'>
-
+        <div className='show-header'>
+          <div className='project-show-header'>
+            <div className= 'project-show-header-left'>
+              <img src='http://res.cloudinary.com/rebekahliu/image/upload/r_0/v1506287036/missing_user_avatar_kxjowu.png' /><br />
+              <span className='by'>By </span>
+              <span>{project.user}</span>
             </div>
-            <ul>
-              <li>pledged of ${project.goal_amount} goal</li>
-              <li>{daysToGo(project.end_date)}</li>
-              <li>days to go</li>
-              <Link to='/project/update'>Edit Project</Link>
-              <button onClick={this.removeProject(project.id)}>Delete Project</button>
-            </ul>
+            <div className= 'project-show-header-right'>
+              <h2>{project.title}</h2>
+              <h3>{project.description}</h3>
+            </div>
+          </div>
+          <div className='project-show-grid'>
+            <div className='col-1-2'>
+              <img src={`${project.image_url}`} alt={`${project.title}`} />
+            </div>
+            <div className='col-2-3'>
+              <div className='col-container'>
+                <div type='progress'>
+                </div>
+                <div>
+                  <span>pledged of ${project.goal_amount} goal</span><br />
+                  <span>{daysToGo(project.end_date)}</span><br />
+                  <span>days to go</span><br />
+                  <Link to='/project/update'>Edit Project</Link><br />
+                  <button onClick={this.removeProject(project.id)}>Delete Project</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div className='project-show-details'>
           <div className='project-show-about'>
-            {project.about}
+            <h2>About this project</h2>
+            <p>{project.about}</p>
           </div>
           <div className='project-show-rewards'>
+            <h2>Support this project</h2>
             {this.rewardIndex()}
           </div>
         </div>
