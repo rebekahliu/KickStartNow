@@ -30,7 +30,7 @@
   padding-bottom: 17px;
 }
 
-.top-nav-right a:hover {
+.top-nav-right a:hover{
   border-bottom: #32e580 5px solid;
 }
 
@@ -57,10 +57,10 @@
   color: black;
   position: relative;
   margin: 0px 16px;
-  padding-bottom: 17px;
+  padding-bottom: 15px;
 }
 
-.top-nav-left a:hover {
+.top-nav-left a:hover{
   border-bottom: #32e580 5px solid;
 }
 

@@ -29,7 +29,7 @@
   margin-right: 5px;
 }
 
-.button button {
+.project-new-nav button {
   font-size: 15px;
   font-weight: bold;
   background-color: inherit;
@@ -37,14 +37,23 @@
   color: #2b3056;
 }
 
-.button button:focus {
+.project-new-nav button:focus {
   outline: 0;
   color: blue;
 }
 
-.button button:hover {
+.project-new-nav button:hover {
   color: blue;
   cursor: pointer;
+}
+
+.submit-button {
+  border: 1px #c4c4c4 solid;
+  padding: 20px;
+  font-size: 15px;
+  color: #c4c4c4;
+  background-color: white;
+  margin-left: 10px;
 }
 
 .project-new-partial {

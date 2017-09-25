@@ -113,7 +113,7 @@ class ProjectForm extends React.Component{
           <i className="fa fa-check-circle"></i>
           <button onClick={this.changeForm('about')}>Story</button>
         </span>
-        <span className='button'>
+        <span className='submit-button'>
           <i className="fa fa-check-circle"></i>
           <button onClick={this.handleSubmit}>Submit</button>
         </span>
