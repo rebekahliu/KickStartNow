@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Carousel } from 'react-responsive-carousel';
 
-// import 'style!css!react-responsive-carousel/lib/styles/main.css';
-// import 'style!css!react-responsive-carousel/lib/styles/carousel.css';
 import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 class NewCarousel extends React.Component {
@@ -25,4 +23,3 @@ class NewCarousel extends React.Component {
 }
 
 export default NewCarousel;
-// ReactDOM.render(<NewCarousel />, document.querySelector('.demo-carousel'));
