@@ -41,7 +41,7 @@ class Greeting extends React.Component{
           <Link to='/project/new'>Start a project</Link>
         </div>
         <Link to='/'>
-          <img src='/assets/logo.png' />
+          
         </Link>
         <div className='top-nav-right'>
           {this.sessionButtons()}
