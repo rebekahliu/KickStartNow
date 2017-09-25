@@ -6,6 +6,9 @@ import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import ProjectIndexContainer from './project_index/project_index_container';
 import ProjectShowContainer from './project_show/project_show_container';
 import ProjectFormContainer from './project_form/project_form_container';
+import CategoryIndexContainer from './category_index/category_index_container';
+import CategoryShowContainer from './category_show/category_show_container';
+import NewCarousel from './carousel';
 
 const App = () => (
   <div>
@@ -18,6 +21,8 @@ const App = () => (
         <ProtectedRoute path='/project/update' component={ProjectFormContainer}/>
         <Route exact path="/projects/:projectId" component={ProjectShowContainer} />
         <Route exact path='/' component={ProjectIndexContainer} />
+        <Route exact path='/categories' component={CategoryIndexContainer} />
+        <Route exact path='/categories/:categoryId' component={CategoryShowContainer} />
       </Switch>
     </div>
     <AuthRoute path='/login' component={SessionFormContainer} />
@@ -26,3 +31,4 @@ const App = () => (
 );
 
 export default App;
+// <NewCarousel />

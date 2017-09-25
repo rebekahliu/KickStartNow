@@ -1,6 +1,8 @@
 .project-new-page {
   background-color: #F7F5F2;
-  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+  height: 1%;
 }
 
 .project-new-wrapper {

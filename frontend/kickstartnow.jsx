@@ -6,6 +6,7 @@ import Root from './components/root';
 //for testing//
 import {receiveProjects, receiveProject, logout} from './actions/project_actions';
 import {getProjects, getProject, createProject, destroyProject} from './actions/project_actions';
+import {postBacking} from './util/backing_api_util';
 //for testing//
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getProject = getProject;
   window.createProject = createProject;
   window.destroyProject = destroyProject;
+  window.postBacking = postBacking;
   //for testing//
 
   ReactDOM.render(<Root store={store}/>, root);

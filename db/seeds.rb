@@ -112,3 +112,73 @@ reward3_3 = Reward.create(
   estimated_delivery: "11/30/2018",
   project_id: 3
 )
+
+backing1_1 = Backing.create(
+  project_id: 1,
+  user_id: 2,
+  reward_id: reward1_1.id,
+  backing_amount: reward1_1.pledge_amount
+)
+
+backing1_2 = Backing.create(
+  project_id: 1,
+  user_id: 3,
+  reward_id: reward1_2.id,
+  backing_amount: reward1_2.pledge_amount
+)
+
+backing2_1 = Backing.create(
+  project_id: 2,
+  user_id: 1,
+  reward_id: reward2_2.id,
+  backing_amount: reward2_2.pledge_amount
+)
+
+backing2_2 = Backing.create(
+  project_id: 2,
+  user_id: 3,
+  reward_id: reward2_3.id,
+  backing_amount: reward2_3.pledge_amount
+)
+
+backing3_1 = Backing.create(
+  project_id: 3,
+  user_id: 1,
+  backing_amount: 1000
+)
+
+category1 = Category.create(
+  name: 'Art'
+)
+
+category2 = Category.create(
+  name: 'Comics'
+)
+
+category3 = Category.create(
+  name: 'Crafts'
+)
+
+category4 = Category.create(
+  name: 'Design'
+)
+
+category5 = Category.create(
+  name: 'Fashion'
+)
+
+category6 = Category.create(
+  name: 'Film & Video'
+)
+
+category7 = Category.create(
+  name: 'Games'
+)
+
+category8 = Category.create(
+  name: 'Photography'
+)
+
+category9 = Category.create(
+  name: 'Technology'
+)

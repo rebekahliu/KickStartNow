@@ -1,5 +1,5 @@
 import React from 'react';
-import {daysToGo} from '../../util/project_util';
+import {daysToGo, totalBacked} from '../../util/project_util';
 import {Link} from 'react-router-dom';
 import RewardItem from '../reward/reward_show';
 
@@ -7,8 +7,15 @@ class ProjectShow extends React.Component{
   constructor(props){
     super(props);
 
+    this.state = {
+      backing_amount: "",
+      reward_id: "",
+      project_id: ""
+    };
+
     this.removeProject = this.removeProject.bind(this);
     this.rewardIndex = this.rewardIndex.bind(this);
+    this.newRewardBacking = this.newRewardBacking.bind(this);
   }
 
   componentWillMount() {
@@ -27,17 +34,32 @@ class ProjectShow extends React.Component{
   rewardIndex() {
     if (this.props.project.rewards){
       return this.props.project.rewards.map((reward) => (
-        <RewardItem reward={reward} />
+        <RewardItem reward={reward}
+                    newRewardBacking={this.newRewardBacking}
+                    state={this.state}/>
       ));
     } else {
       return "";
     }
   }
 
-  render(){
-    const {project, removeProject, rewards} = this.props;
-    if (!project) return null;
+  newRewardBacking(backing) {
+    return e => {
+      e.preventDefault();
+      // this.setState({
+      //   backing_amount: ,
+      //   reward_id: reward.id,
+      //   project_id: reward.project_id
+      // });
+      // const backing = Object.assign({}, this.state);
+      // console.log(backing);
+      // newRewardBacking(backing);
+    };
+  }
 
+  render(){
+    const {project, removeProject, rewards,  createBacking} = this.props;
+    if (!project) return null;
     return(
       <div className='show-container'>
         <div className='show-header'>
@@ -61,7 +83,7 @@ class ProjectShow extends React.Component{
                 <div type='progress'>
                 </div>
                 <div>
-                  <span>pledged of ${project.goal_amount} goal</span><br />
+                  <span>${totalBacked(project.backings)} pledged of ${project.goal_amount} goal</span><br />
                   <span>{daysToGo(project.end_date)}</span><br />
                   <span>days to go</span><br />
                   <Link to='/project/update'>Edit Project</Link><br />
