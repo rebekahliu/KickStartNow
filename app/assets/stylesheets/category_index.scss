@@ -1,0 +1,29 @@
+.category-index-container {
+  padding: 0px 60px;
+
+  .category-index-header {
+    font-family: 'Helvetica';
+
+    h1 {
+      color: #05AF3C;
+      font-size: 15px;
+      font-weight: 100;
+      border-bottom: 1px #CEEBD7 solid;
+      padding: 18px 0px;
+    }
+  }
+
+  .category-index div {
+    margin-bottom: 18px;
+    font-size: 34px;
+    font-weight: 200;
+  }
+
+  .category-index-item a {
+    color: black;
+  }
+
+  .category-index-item a:hover {
+    color: #05AF3C;
+  }
+}

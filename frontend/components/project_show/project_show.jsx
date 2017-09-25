@@ -16,6 +16,7 @@ class ProjectShow extends React.Component{
     this.removeProject = this.removeProject.bind(this);
     this.rewardIndex = this.rewardIndex.bind(this);
     this.newRewardBacking = this.newRewardBacking.bind(this);
+    this.protectedButtons = this.protectedButtons.bind(this);
   }
 
   componentWillMount() {
@@ -57,6 +58,18 @@ class ProjectShow extends React.Component{
     };
   }
 
+  protectedButtons(){
+    const {project} = this.props;
+    if (this.props.currentUser.id === project.user_id){
+      return (
+        <div>
+          <Link to='/project/update'>Edit Project</Link>
+          <button onClick={this.removeProject(project.id)}>Delete Project</button>
+        </div>
+      );
+    }
+  }
+
   render(){
     const {project, removeProject, rewards,  createBacking} = this.props;
     if (!project) return null;
@@ -80,14 +93,13 @@ class ProjectShow extends React.Component{
             </div>
             <div className='col-2-3'>
               <div className='col-container'>
-                <div type='progress'>
-                </div>
-                <div>
-                  <span>${totalBacked(project.backings)} pledged of ${project.goal_amount} goal</span><br />
-                  <span>{daysToGo(project.end_date)}</span><br />
-                  <span>days to go</span><br />
-                  <Link to='/project/update'>Edit Project</Link><br />
-                  <button onClick={this.removeProject(project.id)}>Delete Project</button>
+                <div className='project-show-sidebar'>
+                  <h1>${totalBacked(project.backings)}</h1>
+                  <span>pledged of ${project.goal_amount} goal</span>
+                  <h2>{daysToGo(project.end_date)}</h2>
+                  <span>days to go</span>
+                  <button>Back Project</button>
+                  {this.protectedButtons()}
                 </div>
               </div>
             </div>

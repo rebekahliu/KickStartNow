@@ -98,10 +98,6 @@ class ProjectForm extends React.Component{
       .then(() => this.props.history.push(`/projects/${this.props.project.id}`));
   }
 
-  createRewards(){
-
-  }
-
   navBar(){
     return (
       <div className='project-new-nav'>

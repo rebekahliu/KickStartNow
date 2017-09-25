@@ -7,3 +7,5 @@ json.extract! project, :title,
                        :image_url
 json.id project.id
 json.user project.user.name
+json.category project.category.name
+json.backings project.backings

@@ -65,11 +65,60 @@
 }
 
 .col-2-3 {
-  width: 33.33%;
+  width: 33%;
+  height: 100%;
 }
 
 .col-container {
-  padding-left: 36px;
+  height: 100%;
+  width: 100%;
+  border-top: 3px #2BDE73 solid;
+  padding-top: 18px;
+  margin-left: 36px;
+}
+
+.col-container h1 {
+  color: #05AF3C;
+  font-size: 24px;
+  font-weight: normal;
+  margin: 0px;
+}
+
+.col-container h2 {
+  font-size: 24px;
+  font-weight: normal;
+  margin: 0px;
+  padding-top: 18px;
+}
+
+.col-container span {
+  color: #626369;
+  font-size: 13px;
+  font-weight: 200;
+}
+
+.col-container button {
+  width: 364px;
+  height: 43px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #2BDE73;
+  color: white;
+  font-size: 15px;
+  margin-top: 30px;
+}
+
+.col-container a {
+  margin-top: 30px;
+  width: 364px;
+  height: 43px;
+  border-radius: 5px;
+  background-color: #2BDE73;
+  color: white;
+  font-size: 15px;
+  line-height: 43px;
+  display: inline-block;
+  text-align: center;
 }
 
 .project-show-details {

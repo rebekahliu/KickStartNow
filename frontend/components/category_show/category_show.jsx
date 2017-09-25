@@ -18,9 +18,13 @@ class CategoryShow extends React.Component {
   render(){
     const {name} = this.props.category;
     return(
-      <div>
-        <h1>{name ? name : ""}</h1>
-        {this.rewardProjects()}
+      <div className='category-show'>
+        <div className='category-show-header'>
+          <span>{name ? name : ""} projects</span>
+        </div>
+        <div className='project-index-container'>
+          {this.rewardProjects()}
+        </div>
       </div>
     );
   }

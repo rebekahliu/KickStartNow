@@ -1,5 +1,7 @@
 import React from 'react';
 import ProjectIndexItem from './project_index_item';
+import NewCarousel from '../carousel';
+
 
 class ProjectIndex extends React.Component{
   constructor(props){
@@ -15,8 +17,11 @@ class ProjectIndex extends React.Component{
       <ProjectIndexItem project={project} key={project.id}/>
     ));
     return(
-      <div className='project-index-container'>
-        {projectIndexItems}
+      <div>
+        <NewCarousel />
+        <div className='project-index-container'>
+          {projectIndexItems}
+        </div>
       </div>
     );
   }

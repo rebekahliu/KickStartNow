@@ -34,6 +34,21 @@
   border-bottom: #32e580 5px solid;
 }
 
+.top-nav-right button {
+  background-color: white;
+  color: black;
+  position: relative;
+  font-size: 15px;
+  margin: 0px 16px;
+  padding: 21px 0px 21px 0px;
+}
+
+.top-nav-right button:hover {
+  padding: 21px 0px 16px 0px;
+  border-bottom: #32e580 5px solid;
+  cursor: pointer;
+}
+
 .top-nav-left {
   width: 300px;
 }
@@ -49,17 +64,8 @@
   border-bottom: #32e580 5px solid;
 }
 
-.top-nav-right button {
-  background-color: white;
-  color: black;
-  position: relative;
-  font-size: 15px;
-  margin: 0px 16px;
-  padding: 21px 0px 21px 0px;
-}
-
-.top-nav-right button:hover {
-  padding: 21px 0px 16px 0px;
-  border-bottom: #32e580 5px solid;
-  cursor: pointer;
+.top-nav-left i {
+  margin-right: 6px;
+  font-size: 20px;
+  color: #05AF3C;
 }

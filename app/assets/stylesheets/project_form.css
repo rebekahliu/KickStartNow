@@ -58,6 +58,7 @@
   border: 1px #c4c4c4 solid;
   padding: 18px 12px;
   background-color: white;
+  margin-bottom: 18px;
 }
 
 .project-new-partial textarea {
@@ -87,4 +88,19 @@
   width: 332px;
   height: auto;
   padding: 12px;
+}
+
+.project-new-partial button {
+  width: 364px;
+  height: 43px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #2BDE73;
+  color: white;
+  font-size: 15px;
+  margin-top: 30px;
+}
+
+.project-new-partial button:hover {
+  cursor: pointer;
 }

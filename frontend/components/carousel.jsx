@@ -7,7 +7,7 @@ import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
 class NewCarousel extends React.Component {
   render() {
     return (
-      <Carousel showArrows={true}>
+      <Carousel showStatus={false} showThumbs={false} infiniteLoop={true} autoPlay={true}>
         <div className="carousel">
           <img src="http://res.cloudinary.com/rebekahliu/image/upload/v1506313367/praline-182861_1920_fzf2p2.jpg" />
         </div>

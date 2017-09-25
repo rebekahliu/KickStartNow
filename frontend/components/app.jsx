@@ -16,7 +16,6 @@ const App = () => (
       <GreetingContainer />
     </header>
     <div className='main-page'>
-      <NewCarousel />
       <Switch>
         <ProtectedRoute path='/project/new' component={ProjectFormContainer}/>
         <ProtectedRoute path='/project/update' component={ProjectFormContainer}/>

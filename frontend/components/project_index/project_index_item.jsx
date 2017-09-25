@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {daysToGo} from '../../util/project_util';
+import {daysToGo, totalBacked, percentFunded} from '../../util/project_util';
 
 class ProjectIndexItem extends React.Component{
   render(){
@@ -11,20 +11,23 @@ class ProjectIndexItem extends React.Component{
           <img src={`${project.image_url}`} alt={`${project.title}`} />
         </ Link>
         <div className='index-item-details'>
-          <div className='index-item-details-top'>
-            <div className='index-item-category'>Category</div>
-            <div className='index-item-title'>
-              <Link to={`/projects/${project.id}`}>{project.title}</Link>
-              - {project.description}<br />
-              by {project.user}<br />
-            </div>
+          <div className='index-item-category'>{project.category}</div>
+          <div className='index-item-title'>
+            <Link to={`/projects/${project.id}`}>{project.title}</Link>
+            <span>: {project.description}</span><br />
+            <span>
+              <img src='http://res.cloudinary.com/rebekahliu/image/upload/r_0/v1506287036/missing_user_avatar_kxjowu.png' /> by
+            </span>
+            <span className='index-item-user'> {project.user}</span>
           </div>
           <div className='index-item-details-bottom'>
             <div className='index-item-details-bottom-info'>
-              <li>
-              {daysToGo(project.end_date)} days to go<br />
-              %funded
-              </li>
+              <span className='index-item-bold'>${totalBacked(project.backings)}</span>
+              <span> pledged</span><br />
+              <span className='index-item-bold'>{percentFunded(project.goal_amount, project.backings)}%</span>
+              <span> funded</span><br />
+              <span className='index-item-bold'>{daysToGo(project.end_date)}</span>
+              <span> days to go</span><br />
             </div>
           </div>
         </div>

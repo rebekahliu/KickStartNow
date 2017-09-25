@@ -13,11 +13,19 @@ class CategoryIndex extends React.Component{
   render(){
     const {categories} = this.props;
     const allCategories = categories.map((category) =>
-      <Link to={`/categories/${category.id}`}>{category.name}</Link>
+      <div className='category-index-item'>
+        <Link to={`/categories/${category.id}`}>{category.name}</Link>
+        <br />
+      </div>
     );
     return(
-      <div>
-        {allCategories}
+      <div className='category-index-container'>
+        <div className='category-index-header'>
+          <h1>Categories</h1>
+        </div>
+        <div className='category-index'>
+          {allCategories}
+        </div>
       </div>
     );
   }

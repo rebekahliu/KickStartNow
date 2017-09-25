@@ -14,11 +14,11 @@ category1 = Category.create(
 )
 
 category2 = Category.create(
-  name: 'Comics'
+  name: 'Comic'
 )
 
 category3 = Category.create(
-  name: 'Crafts'
+  name: 'Craft'
 )
 
 category4 = Category.create(
@@ -34,7 +34,7 @@ category6 = Category.create(
 )
 
 category7 = Category.create(
-  name: 'Games'
+  name: 'Game'
 )
 
 category8 = Category.create(

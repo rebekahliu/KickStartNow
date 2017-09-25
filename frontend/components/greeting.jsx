@@ -38,11 +38,14 @@ class Greeting extends React.Component{
     return(
       <div className='top-nav'>
         <div className='top-nav-left'>
-          <Link to='/categories'>Explore</Link>
+          <Link to='/categories'>
+            <i className="fa fa-compass"></i>
+            Explore
+          </Link>
           <Link to='/project/new'>Start a project</Link>
         </div>
         <Link to='/'>
-          <img src='/assets/logo.png' />
+          <img src='http://res.cloudinary.com/rebekahliu/image/upload/v1506374166/logo_xuvo0k.png' />
         </Link>
         <div className='top-nav-right'>
           {this.sessionButtons()}

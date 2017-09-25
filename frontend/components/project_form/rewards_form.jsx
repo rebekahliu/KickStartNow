@@ -11,7 +11,7 @@ class RewardsForm extends React.Component{
                       idx={idx}/>
     ));
     return(
-      <div>
+      <div className='project-new-partial'>
         {rewardIndexItem}
         <button onClick={handleAddReward}>+ Reward</button>
       </div>

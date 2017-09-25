@@ -22,3 +22,7 @@ const backingAmount = backing => (
 export const addCommas = (num) => (
   num.toLocaleString()
 );
+
+export const percentFunded = (goal_amount, backings) => (
+  Math.floor((totalBacked(backings) / goal_amount) * 100)
+);

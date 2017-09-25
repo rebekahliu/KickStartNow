@@ -4,7 +4,8 @@ import {createBacking} from '../../actions/backing_actions';
 import ProjectShow from './project_show';
 
 const mapStateToProps = (state, ownProps) => ({
-  project: state.entities.project
+  project: state.entities.project,
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({
