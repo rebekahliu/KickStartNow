@@ -27,7 +27,8 @@
     "test": "test"
   },
   "devDependencies": {
-    "css-loader": "^0.28.7"
+    "css-loader": "^0.28.7",
+    "style-loader": "^0.18.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

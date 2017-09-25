@@ -16,7 +16,7 @@
 }
 
 .top-nav-right {
-  width: 150px;
+  width: 300px;
   display: flex;
   justify-content: flex-end;
   text-align: center;
@@ -35,7 +35,7 @@
 }
 
 .top-nav-left {
-  width: 150px;
+  width: 300px;
 }
 
 .top-nav-left a {

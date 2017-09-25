@@ -1,13 +1,24 @@
 import React from 'react';
 
 class CategoryShow extends React.Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.getCategory(this.props.match.params.categoryId);
+  }
+
+  rewardProjects(){
+    if (this.props.category){
+      return this.props.category.projects.map((project) => (
+        <ProjectShowContainer project={project} />
+      ));
+    }
   }
 
   render(){
     return(
-      <h1>{this.props.category.name}</h1>
+      <div>
+        <h1>{this.props.category.name}</h1>
+        // {rewardProjects()}
+      </div>
     );
   }
 }
