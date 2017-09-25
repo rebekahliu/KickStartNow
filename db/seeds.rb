@@ -129,7 +129,7 @@ reward3_1 = Reward.create(
   title: 'One pack of hot chocolate',
   description: 'One pack of our delicious ready to make hot chocolate mix.',
   pledge_amount: 30,
-  estimated_delivery: "11/30/2018",
+  estimated_delivery: "30/11/2018",
   project_id: project3.id
 )
 
@@ -137,7 +137,7 @@ reward3_2 = Reward.create(
   title: 'Two packs of hot chocolate',
   description: 'Two packs of our delicious ready to make hot chocolate mix.',
   pledge_amount: 50,
-  estimated_delivery: "11/30/2018",
+  estimated_delivery: "30/11/2018",
   project_id: project3.id
 )
 
@@ -145,7 +145,7 @@ reward3_3 = Reward.create(
   title: 'Company pack of hot chocolate',
   description: 'A pack of our delicious ready to make hot chocolate mix enough for an office space of 50 people.',
   pledge_amount: 300,
-  estimated_delivery: "11/30/2018",
+  estimated_delivery: "30/11/2018",
   project_id: project3.id
 )
 
