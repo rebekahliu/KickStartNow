@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {getProject, destroyProject} from '../../actions/project_actions';
+import {getProject, destroyProject, resetProject} from '../../actions/project_actions';
 import {createBacking} from '../../actions/backing_actions';
 import ProjectShow from './project_show';
 
@@ -11,7 +11,8 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch) => ({
   getProject: projectId => dispatch(getProject(projectId)),
   removeProject: projectId => dispatch(destroyProject(projectId)),
-  createBacking: backing => dispatch(createBacking(backing))
+  createBacking: backing => dispatch(createBacking(backing)),
+  resetProject: () => dispatch(resetProject())
 });
 
 export default connect(

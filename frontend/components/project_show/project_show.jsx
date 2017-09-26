@@ -19,8 +19,13 @@ class ProjectShow extends React.Component{
     // this.newRewardBacking = this.newRewardBacking.bind(this);
   }
 
-  componentDidMount() {
+  componentDidMount(){
     this.props.getProject(this.props.match.params.projectId);
+    window.scrollTo(0,0);
+  }
+
+  componentWillUnmount(){
+    this.props.resetProject();
   }
 
   removeProject(projectId) {

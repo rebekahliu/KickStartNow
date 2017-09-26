@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {getCategory} from '../../actions/category_actions';
+import {getCategory, resetCategory} from '../../actions/category_actions';
 import CategoryShow from './category_show';
 import {getProjects} from '../../actions/project_actions';
 
@@ -10,7 +10,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   getCategory: categoryId => dispatch(getCategory(categoryId)),
-  getProjects: () => dispatch(getProjects())
+  getProjects: () => dispatch(getProjects()),
+  resetCategory: () => dispatch(resetCategory())
 });
 
 export default connect(

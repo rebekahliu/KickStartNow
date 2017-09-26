@@ -3,6 +3,7 @@ import {indexProjects, showProjects, postProject, patchProject, deleteProject} f
 export const RECEIVE_PROJECTS = 'RECEIVE_PROJECTS';
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
 export const REMOVE_PROJECT = 'REMOVE_PROJECT';
+export const RESET_PROJECT = 'RESET_PROJECT';
 
 export const receiveProjects = projects => ({
   type: RECEIVE_PROJECTS,
@@ -17,6 +18,10 @@ export const receiveProject = project => ({
 export const removeProject = project => ({
   type: REMOVE_PROJECT,
   project
+});
+
+export const resetProject = () => ({
+  type: RESET_PROJECT
 });
 
 export const getProjects = () => dispatch => (

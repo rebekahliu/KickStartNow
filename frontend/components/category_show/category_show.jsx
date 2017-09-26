@@ -7,10 +7,14 @@ class CategoryShow extends React.Component {
     this.props.getCategory(this.props.match.params.categoryId);
   }
 
+  componentWillUnmount(){
+    this.props.resetCategory();
+  }
+
   rewardProjects(){
     if (this.props.category.name){
       return this.props.category.projects.map((id) => (
-        <ProjectIndexItem project={this.props.projects[id]} />
+        <ProjectIndexItem project={this.props.projects[id]} key={id} />
       ));
     }
   }
