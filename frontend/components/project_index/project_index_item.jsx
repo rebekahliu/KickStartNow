@@ -16,7 +16,7 @@ class ProjectIndexItem extends React.Component{
             <Link to={`/projects/${project.id}`}>{project.title}</Link>
             <span>: {project.description}</span><br />
             <span>
-              <img src='http://res.cloudinary.com/rebekahliu/image/upload/r_0/v1506287036/missing_user_avatar_kxjowu.png' /> by
+              <img src='https://res.cloudinary.com/rebekahliu/image/upload/r_0/v1506287036/missing_user_avatar_kxjowu.png' /> by
             </span>
             <span className='index-item-user'> {project.user}</span>
           </div>

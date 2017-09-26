@@ -79,7 +79,7 @@ class ProjectShow extends React.Component{
         <div className='show-header'>
           <div className='project-show-header'>
             <div className= 'project-show-header-left'>
-              <img src='http://res.cloudinary.com/rebekahliu/image/upload/r_0/v1506287036/missing_user_avatar_kxjowu.png' /><br />
+              <img src='https://res.cloudinary.com/rebekahliu/image/upload/r_0/v1506287036/missing_user_avatar_kxjowu.png' /><br />
               <span className='by'>By </span>
               <span>{project.user}</span>
             </div>

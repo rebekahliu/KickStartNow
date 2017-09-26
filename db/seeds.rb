@@ -53,7 +53,7 @@ project1 = Project.create(
   goal_amount: 7000,
   end_date: "1/1/2018",
   category_id: category1.id,
-  image_url: 'http://res.cloudinary.com/rebekahliu/image/upload/v1506133644/hot-2574466_1920_dowvqm.jpg'
+  image_url: 'https://res.cloudinary.com/rebekahliu/image/upload/v1506133644/hot-2574466_1920_dowvqm.jpg'
 )
 project2 = Project.create(
   title: 'Projecting animals one at a time',
@@ -63,7 +63,7 @@ project2 = Project.create(
   goal_amount: 10000,
   end_date: "6/1/2018",
   category_id: category2.id,
-  image_url: 'http://res.cloudinary.com/rebekahliu/image/upload/c_fill,h_576,w_1024/v1506133644/pug-690566_1920_vuwuox.jpg'
+  image_url: 'https://res.cloudinary.com/rebekahliu/image/upload/c_fill,h_576,w_1024/v1506133644/pug-690566_1920_vuwuox.jpg'
 )
 
 project3 = Project.create(
@@ -74,7 +74,7 @@ project3 = Project.create(
   goal_amount: 9000,
   end_date: "3/1/2018",
   category_id: category3.id,
-  image_url: 'http://res.cloudinary.com/rebekahliu/image/upload/v1506133644/hot-chocolate-1782623_1920_ybcmvd.jpg'
+  image_url: 'https://res.cloudinary.com/rebekahliu/image/upload/v1506133644/hot-chocolate-1782623_1920_ybcmvd.jpg'
 )
 
 reward1_1 = Reward.create(
