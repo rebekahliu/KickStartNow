@@ -20,8 +20,7 @@ class ProjectShow extends React.Component{
   }
 
   componentDidMount() {
-    this.props.getProject(this.props.match.params.projectId)
-      .then(() => this.forceUpdate());
+    this.props.getProject(this.props.match.params.projectId);
   }
 
   removeProject(projectId) {
@@ -60,18 +59,19 @@ class ProjectShow extends React.Component{
 
   protectedButtons(){
     const {project} = this.props;
-    if (this.props.currentUser.id === project.user_id){
-      return (
-        <div>
-          <Link to='/project/update'>Edit Project</Link>
-          <button onClick={this.removeProject(project.id)}>Delete Project</button>
-        </div>
-      );
+    if (this.props.currentUser){
+      if (this.props.currentUser.id === project.user_id){
+        return (
+          <div>
+            <Link to='/project/update'>Edit Project</Link>
+            <button onClick={this.removeProject(project.id)}>Delete Project</button>
+          </div>
+        );
+      }
     }
   }
 
   render(){
-    console.log('render project show');
     const {project, removeProject, rewards,  createBacking} = this.props;
     if (!project) return null;
     return(
