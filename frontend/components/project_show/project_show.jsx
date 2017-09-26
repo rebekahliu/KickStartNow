@@ -7,19 +7,19 @@ class ProjectShow extends React.Component{
   constructor(props){
     super(props);
 
-    this.state = {
-      backing_amount: "",
-      reward_id: "",
-      project_id: ""
-    };
+    // this.state = {
+    //   backing_amount: "",
+    //   reward_id: "",
+    //   project_id: ""
+    // };
 
     this.removeProject = this.removeProject.bind(this);
     this.rewardIndex = this.rewardIndex.bind(this);
-    this.newRewardBacking = this.newRewardBacking.bind(this);
     this.protectedButtons = this.protectedButtons.bind(this);
+    // this.newRewardBacking = this.newRewardBacking.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.getProject(this.props.match.params.projectId)
       .then(() => this.forceUpdate());
   }
@@ -44,19 +44,19 @@ class ProjectShow extends React.Component{
     }
   }
 
-  newRewardBacking(backing) {
-    return e => {
-      e.preventDefault();
-      // this.setState({
-      //   backing_amount: ,
-      //   reward_id: reward.id,
-      //   project_id: reward.project_id
-      // });
-      // const backing = Object.assign({}, this.state);
-      // console.log(backing);
-      // newRewardBacking(backing);
-    };
-  }
+  // newRewardBacking(backing) {
+  //   return e => {
+  //     e.preventDefault();
+  //     this.setState({
+  //       backing_amount: ,
+  //       reward_id: reward.id,
+  //       project_id: reward.project_id
+  //     });
+  //     const backing = Object.assign({}, this.state);
+  //     console.log(backing);
+  //     newRewardBacking(backing);
+  //   };
+  // }
 
   protectedButtons(){
     const {project} = this.props;
@@ -71,6 +71,7 @@ class ProjectShow extends React.Component{
   }
 
   render(){
+    console.log('render project show');
     const {project, removeProject, rewards,  createBacking} = this.props;
     if (!project) return null;
     return(

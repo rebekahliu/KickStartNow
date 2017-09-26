@@ -9,7 +9,8 @@ const ProjectsReducer = (state = {}, action) => {
     case RECEIVE_PROJECT:
       const newProject = action.project;
       newProject.reward_ids = action.project.rewards.map(reward => reward.id);
-      newState = Object.assign({}, state, newProject);
+      newState = Object.assign({}, state);
+      newState[newProject.id] = newProject;
       return newState;
     case REMOVE_PROJECT:
       newState = Object.assign({}, state, newProject);
