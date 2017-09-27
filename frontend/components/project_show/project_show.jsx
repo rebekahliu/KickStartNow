@@ -21,8 +21,6 @@ class ProjectShow extends React.Component{
   }
 
   componentWillReceiveProps(newProps){
-    console.log('props', this.props);
-    console.log('newProps', newProps);
     if (newProps.backing !== this.props.backing){
       this.props.getProject(this.props.match.params.projectId);
     }
@@ -73,7 +71,6 @@ class ProjectShow extends React.Component{
 
   render(){
     const {project, removeProject, rewards,  createBacking, match} = this.props;
-    console.log(percentFunded(project.goal_amount, project.backings));
 
     if (!project) return null;
     if (project.id !== parseInt(match.params.projectId)){
