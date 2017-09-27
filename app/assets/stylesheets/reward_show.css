@@ -14,9 +14,28 @@
   background-color: inherit;
 }
 
+.pledge-info button {
+  width: 332px;
+  height: 43px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #2BDE73;
+  color: white;
+  font-size: 15px;
+}
+
+.pledge-info button:hover {
+  cursor: pointer;
+}
+
+.pledge-info input {
+  width: 308px;
+}
+
 .pledge-info {
   margin: 0px 20px;
   padding: 20px 0px;
+  text-align: left;
 }
 
 .reward-item h2 {

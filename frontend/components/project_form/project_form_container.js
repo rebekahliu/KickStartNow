@@ -5,7 +5,8 @@ import ProjectForm from './project_form';
 
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
-  projects: state.entities.projects
+  projects: state.entities.projects,
+  project: state.entities.project
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

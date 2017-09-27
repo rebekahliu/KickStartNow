@@ -9,7 +9,5 @@ export const receiveBacking = backing => ({
 
 export const createBacking = newBacking => dispatch => (
   postBacking(newBacking)
-    .then(backing => console.log("successful ajax call"))
+    .then(backing =>  dispatch(receiveBacking(backing)))
 );
-
-// dispatch(receiveBacking(backing))

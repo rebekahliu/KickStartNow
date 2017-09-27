@@ -1,23 +1,17 @@
 import React from 'react';
 import {daysToGo, totalBacked} from '../../util/project_util';
 import {Link} from 'react-router-dom';
-import RewardItem from '../reward/reward_show';
+import RewardItemContainer from '../reward/reward_container';
 import ReactHtmlParser from 'react-html-parser';
+import BackingFormContainer from '../backing/backing_form_container';
 
 class ProjectShow extends React.Component{
   constructor(props){
     super(props);
 
-    // this.state = {
-    //   backing_amount: "",
-    //   reward_id: "",
-    //   project_id: ""
-    // };
-
     this.removeProject = this.removeProject.bind(this);
     this.rewardIndex = this.rewardIndex.bind(this);
     this.protectedButtons = this.protectedButtons.bind(this);
-    // this.newRewardBacking = this.newRewardBacking.bind(this);
   }
 
   componentDidMount(){
@@ -40,29 +34,14 @@ class ProjectShow extends React.Component{
   rewardIndex() {
     if (this.props.project.rewards){
       return this.props.project.rewards.map((reward) => (
-        <RewardItem reward={reward}
-                    newRewardBacking={this.newRewardBacking}
-                    state={this.state}
-                    key={reward.id}/>
+        <RewardItemContainer reward={reward}
+                             state={this.state}
+                             key={reward.id}/>
       ));
     } else {
       return "";
     }
   }
-
-  // newRewardBacking(backing) {
-  //   return e => {
-  //     e.preventDefault();
-  //     this.setState({
-  //       backing_amount: ,
-  //       reward_id: reward.id,
-  //       project_id: reward.project_id
-  //     });
-  //     const backing = Object.assign({}, this.state);
-  //     console.log(backing);
-  //     newRewardBacking(backing);
-  //   };
-  // }
 
   protectedButtons(){
     const {project} = this.props;
@@ -120,6 +99,7 @@ class ProjectShow extends React.Component{
           </div>
           <div className='project-show-rewards'>
             <h2>Support this project</h2>
+            <BackingFormContainer project={project} />
             {this.rewardIndex()}
           </div>
         </div>

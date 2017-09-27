@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import {createBacking} from '../../actions/backing_actions';
-import RewardShow from './reward_show';
+import BackingForm from './backing_form';
 
 const mapDispatchToProps = (dispatch) => ({
   createBacking: backing => dispatch(createBacking(backing))
@@ -9,4 +9,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   null,
   mapDispatchToProps
-)(RewardShow);
+)(BackingForm);
