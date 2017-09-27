@@ -8,5 +8,7 @@ Rails.application.routes.draw do
     resources :rewards, only: [:create, :show]
     resources :backings, only: [:create, :show]
     resources :categories, only: [:show, :index]
+
+    get '/search', to: 'projects#search'
   end
 end

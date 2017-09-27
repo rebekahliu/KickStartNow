@@ -1,13 +1,37 @@
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  overflow: hidden;
+.header {
   box-shadow: 0 2px 3px #bfc0c1;
-  font-family: 'Roboto', sans-serif;
   height: 60px;
   position:relative;
   z-index:0;
+}
+
+.header-search {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 50px;
+}
+
+.header-search input {
+  border: none;
+  font-size: 15px;
+}
+
+.header-search input:focus {
+  outline: 0;
+}
+
+.header-search i {
+  color: #05AF3C;
+  line-height: 60px;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
 }
 
 .top-nav img {
@@ -47,6 +71,10 @@
   padding: 21px 0px 16px 0px;
   border-bottom: #32e580 5px solid;
   cursor: pointer;
+}
+
+.top-nav-right i {
+  margin: 0px 16px;
 }
 
 .top-nav-left {

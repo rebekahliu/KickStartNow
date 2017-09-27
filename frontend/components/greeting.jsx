@@ -21,6 +21,9 @@ class Greeting extends React.Component{
     if (this.props.currentUser){
       return (
         <div>
+          <Link to='/search'>
+            <i className="fa fa-search"></i>
+          </Link>
           <button onClick={this.handleClick()}>Logout</button>
         </div>
       );

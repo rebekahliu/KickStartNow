@@ -18,7 +18,6 @@ class ProjectIndex extends React.Component{
     ));
     return(
       <div>
-        <NewCarousel />
         <div className='project-index-container'>
           {projectIndexItems}
         </div>

@@ -1,4 +1,5 @@
 import {RECEIVE_PROJECTS, RECEIVE_PROJECT, REMOVE_PROJECT} from '../actions/project_actions';
+import {RECEIVE_SEARCH_RESULTS} from '../actions/search_actions';
 
 const ProjectsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -16,9 +17,14 @@ const ProjectsReducer = (state = {}, action) => {
       newState = Object.assign({}, state, newProject);
       delete newState[action.project.id];
       return newState;
+    case RECEIVE_SEARCH_RESULTS:
+      return action.projects;
     default:
       return state;
   }
 };
 
 export default ProjectsReducer;
+
+// case RECEIVE_SEARCH_RESULTS:
+// return action.projects;

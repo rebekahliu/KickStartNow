@@ -34,6 +34,12 @@ class Api::ProjectsController < ApplicationController
     render :show
   end
 
+  def search
+    @projects = Project.where("title LIKE (?)", "%#{params[:query]}%")
+                               .limit(10)
+    render :index
+  end
+
   private
 
   def project_params

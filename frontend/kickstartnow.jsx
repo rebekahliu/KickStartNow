@@ -7,6 +7,7 @@ import Root from './components/root';
 import {receiveProjects, receiveProject, logout, resetProject} from './actions/project_actions';
 import {getProjects, getProject, createProject, destroyProject} from './actions/project_actions';
 import {postBacking} from './util/backing_api_util';
+import {search} from './util/search_api_util';
 //for testing//
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.destroyProject = destroyProject;
   window.postBacking = postBacking;
   window.resetProject = resetProject;
+  window.search = search;
   //for testing//
 
   ReactDOM.render(<Root store={store}/>, root);
