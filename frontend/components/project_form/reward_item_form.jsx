@@ -2,7 +2,6 @@ import React from 'react';
 
 class RewardItemForm extends React.Component{
   render(){
-    console.log('rendering rewarditemform');
     const {saveRewardValues, reward, idx} = this.props;
     return (
       <form>

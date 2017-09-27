@@ -11,9 +11,13 @@ class ProjectIndex extends React.Component{
     this.props.getProjects();
   }
 
-  // componentWillUnmount(){
-  //   this.props.getProjects();
-  // }
+  componentWillReceiveProps(nextProps){
+    // console.log(this.props);
+    // console.log('nextProps', nextProps);
+    if (this.props.match.path !== nextProps.match.path){
+      this.props.getProjects();
+    }
+  }
 
   render(){
     const projectIndexItems = this.props.projects.map((project) => (

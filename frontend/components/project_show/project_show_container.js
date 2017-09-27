@@ -4,7 +4,8 @@ import ProjectShow from './project_show';
 
 const mapStateToProps = (state, ownProps) => ({
   project: state.entities.project,
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  backing: state.entities.backing
 });
 
 const mapDispatchToProps = (dispatch) => ({

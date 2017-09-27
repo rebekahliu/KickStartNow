@@ -14,6 +14,10 @@
   background-color: inherit;
 }
 
+.reward-item button {
+  cursor: pointer;
+}
+
 .pledge-info button {
   width: 332px;
   height: 43px;

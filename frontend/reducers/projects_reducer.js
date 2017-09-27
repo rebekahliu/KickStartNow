@@ -25,6 +25,3 @@ const ProjectsReducer = (state = {}, action) => {
 };
 
 export default ProjectsReducer;
-
-// case RECEIVE_SEARCH_RESULTS:
-// return action.projects;

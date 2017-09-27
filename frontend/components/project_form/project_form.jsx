@@ -35,11 +35,11 @@ class ProjectForm extends React.Component{
     this.saveAboutValue = this.saveAboutValue.bind(this);
   }
 
-  // componentWillMount(){
-  //   if (this.props.match.path.includes('update')){
-  //     this.setState(this.props.projects[this.props.match.params.projectId]);
-  //   }
-  // }
+  componentWillMount(){
+    if (this.props.match.path.includes('update')){
+      this.setState(this.props.projects[this.props.match.params.projectId]);
+    }
+  }
 
   changeForm(type){
     return (e) => {
@@ -149,7 +149,6 @@ class ProjectForm extends React.Component{
   }
 
   render(){
-    console.log(this.state);
     return(
       <div className='project-new-page'>
         <div className='project-new-wrapper'>

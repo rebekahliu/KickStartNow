@@ -1,5 +1,5 @@
 import React from 'react';
-import {daysToGo, totalBacked} from '../../util/project_util';
+import {daysToGo, totalBacked, percentFunded} from '../../util/project_util';
 import {Link} from 'react-router-dom';
 import RewardItemContainer from '../reward/reward_container';
 import ReactHtmlParser from 'react-html-parser';
@@ -12,6 +12,7 @@ class ProjectShow extends React.Component{
     this.removeProject = this.removeProject.bind(this);
     this.rewardIndex = this.rewardIndex.bind(this);
     this.protectedButtons = this.protectedButtons.bind(this);
+    this.progressBar = this.progressBar.bind(this);
   }
 
   componentDidMount(){
@@ -19,8 +20,12 @@ class ProjectShow extends React.Component{
     window.scrollTo(0,0);
   }
 
-  componentWillUnmount(){
-    this.props.resetProject();
+  componentWillReceiveProps(newProps){
+    console.log('props', this.props);
+    console.log('newProps', newProps);
+    if (newProps.backing !== this.props.backing){
+      this.props.getProject(this.props.match.params.projectId);
+    }
   }
 
   removeProject(projectId) {
@@ -57,9 +62,23 @@ class ProjectShow extends React.Component{
     }
   }
 
+  progressBar(){
+    const {project} = this.props;
+    if (percentFunded(project.goal_amount, project.backings) > 100){
+      return {width: '100%'};
+    } else {
+      return {width: `${percentFunded(project.goal_amount, project.backings)}%`};
+    }
+  }
+
   render(){
-    const {project, removeProject, rewards,  createBacking} = this.props;
+    const {project, removeProject, rewards,  createBacking, match} = this.props;
+    console.log(percentFunded(project.goal_amount, project.backings));
+
     if (!project) return null;
+    if (project.id !== parseInt(match.params.projectId)){
+      return null;
+    }
     return(
       <div className='show-container'>
         <div className='show-header'>
@@ -80,6 +99,7 @@ class ProjectShow extends React.Component{
             </div>
             <div className='col-2-3'>
               <div className='col-container'>
+                <div className='progress-bar' style={this.progressBar()}></div>
                 <div className='project-show-sidebar'>
                   <h1>${totalBacked(project.backings)}</h1>
                   <span>pledged of ${project.goal_amount} goal</span>
@@ -95,7 +115,7 @@ class ProjectShow extends React.Component{
         <div className='project-show-details'>
           <div className='project-show-about'>
             <h2>About this project</h2>
-            <p>{ReactHtmlParser(project.about)}</p>
+            <span>{ReactHtmlParser(project.about)}</span>
           </div>
           <div className='project-show-rewards'>
             <h2>Support this project</h2>

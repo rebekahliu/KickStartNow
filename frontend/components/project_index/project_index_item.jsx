@@ -13,8 +13,8 @@ class ProjectIndexItem extends React.Component{
         <div className='index-item-details'>
           <div className='index-item-category'>{project.category}</div>
           <div className='index-item-title'>
-            <Link to={`/projects/${project.id}`}>{project.title}</Link>
-            <span>: {project.description}</span><br />
+            <Link to={`/projects/${project.id}`}>{project.title}:</Link>
+            <span id='clampjs'> {project.description}</span><br />
             <span>
               <img src='https://res.cloudinary.com/rebekahliu/image/upload/r_0/v1506287036/missing_user_avatar_kxjowu.png' /> by
             </span>
@@ -37,3 +37,9 @@ class ProjectIndexItem extends React.Component{
 }
 
 export default ProjectIndexItem;
+
+
+// <script>
+//   var description = document.getElementById("clampjs");
+//   $clamp(description, {clamp: 3});
+// </script>

@@ -72,9 +72,13 @@
 .col-container {
   height: 100%;
   width: 100%;
-  border-top: 3px #2BDE73 solid;
   padding-top: 18px;
   margin-left: 36px;
+}
+
+.progress-bar {
+  border-top: 3px #2BDE73 solid;
+  margin-bottom: 30px;
 }
 
 .col-container h1 {
@@ -98,7 +102,7 @@
 }
 
 .col-container button {
-  width: 364px;
+  width: 100%;
   height: 43px;
   padding: 10px 20px;
   border-radius: 5px;
@@ -110,7 +114,7 @@
 
 .col-container a {
   margin-top: 30px;
-  width: 364px;
+  width: 100%;
   height: 43px;
   border-radius: 5px;
   background-color: #2BDE73;
