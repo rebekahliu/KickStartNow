@@ -24,12 +24,12 @@
 }
 
 footer {
-  height: 80px;
+  height: 30px;
   background-color: #020621;
   display: flex;
   justify-content: flex-end;
-  font-size: 70px;
-  padding: 20px 30px;
+  font-size: 20px;
+  padding: 5px 5px;
 }
 
 footer a {
