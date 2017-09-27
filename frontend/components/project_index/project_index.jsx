@@ -1,6 +1,5 @@
 import React from 'react';
 import ProjectIndexItem from './project_index_item';
-import NewCarousel from '../carousel';
 
 
 class ProjectIndex extends React.Component{
@@ -11,6 +10,10 @@ class ProjectIndex extends React.Component{
   componentDidMount(){
     this.props.getProjects();
   }
+
+  // componentWillUnmount(){
+  //   this.props.getProjects();
+  // }
 
   render(){
     const projectIndexItems = this.props.projects.map((project) => (

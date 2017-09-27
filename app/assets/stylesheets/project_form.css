@@ -25,7 +25,11 @@
   background-color: white;
 }
 
-.button i{
+.button i {
+  margin-right: 5px;
+}
+
+.submit-button i {
   margin-right: 5px;
 }
 
@@ -70,8 +74,15 @@
   margin-bottom: 18px;
 }
 
-.project-new-partial textarea {
-  height: 100px;
+.ql-editor {
+  min-height: 300px;
+  width: 400px;
+}
+
+.ql-toolbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .dropzone {
@@ -79,7 +90,7 @@
   height: 17px;
   border-radius: 5px;
   margin-bottom: 30px;
-  border: 1px #bfc0c1 dashed;
+  border: 1px black dashed;
   padding: 12px;
   font-size: 15px;
 }
@@ -110,6 +121,24 @@
   margin-top: 30px;
 }
 
+.ql-formats button {
+  margin-top: 0px;
+}
+
 .project-new-partial button:hover {
   cursor: pointer;
+}
+
+.project-new-partial select {
+  width: 358px;
+  height: 43px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

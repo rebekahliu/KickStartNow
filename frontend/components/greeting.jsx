@@ -20,7 +20,7 @@ class Greeting extends React.Component{
   sessionButtons(){
     if (this.props.currentUser){
       return (
-        <div>
+        <div className='logout-search'>
           <Link to='/search'>
             <i className="fa fa-search"></i>
           </Link>
@@ -29,7 +29,7 @@ class Greeting extends React.Component{
       );
     } else {
       return (
-        <div>
+        <div className='signin-signup'>
           <Link to='/login'>Log in</Link>
           <Link to='/signup'>Sign up</Link>
         </div>

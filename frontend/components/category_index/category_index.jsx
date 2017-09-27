@@ -13,7 +13,7 @@ class CategoryIndex extends React.Component{
   render(){
     const {categories} = this.props;
     const allCategories = categories.map((category) =>
-      <div className='category-index-item'>
+      <div className='category-index-item' key={category.id}>
         <Link to={`/categories/${category.id}`}>{category.name}</Link>
         <span>{category.projects.length}</span>
         <br />

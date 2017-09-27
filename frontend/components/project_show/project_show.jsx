@@ -2,6 +2,7 @@ import React from 'react';
 import {daysToGo, totalBacked} from '../../util/project_util';
 import {Link} from 'react-router-dom';
 import RewardItem from '../reward/reward_show';
+import ReactHtmlParser from 'react-html-parser';
 
 class ProjectShow extends React.Component{
   constructor(props){
@@ -41,7 +42,8 @@ class ProjectShow extends React.Component{
       return this.props.project.rewards.map((reward) => (
         <RewardItem reward={reward}
                     newRewardBacking={this.newRewardBacking}
-                    state={this.state}/>
+                    state={this.state}
+                    key={reward.id}/>
       ));
     } else {
       return "";
@@ -68,7 +70,7 @@ class ProjectShow extends React.Component{
       if (this.props.currentUser.id === project.user_id){
         return (
           <div>
-            <Link to='/project/update'>Edit Project</Link>
+            <Link to={`/project/update/${project.id}`}>Edit Project</Link>
             <button onClick={this.removeProject(project.id)}>Delete Project</button>
           </div>
         );
@@ -114,7 +116,7 @@ class ProjectShow extends React.Component{
         <div className='project-show-details'>
           <div className='project-show-about'>
             <h2>About this project</h2>
-            <p>{project.about}</p>
+            <p>{ReactHtmlParser(project.about)}</p>
           </div>
           <div className='project-show-rewards'>
             <h2>Support this project</h2>

@@ -29,9 +29,13 @@
 .top-nav {
   display: flex;
   justify-content: space-between;
-  overflow: hidden;
   align-items: center;
+  overflow: hidden;
+  box-shadow: 0 2px 3px #bfc0c1;
   font-family: 'Roboto', sans-serif;
+  height: 60px;
+  position:relative;
+  z-index:0;
 }
 
 .top-nav img {
@@ -47,6 +51,7 @@
   font-size: 15px;
 }
 
+
 .top-nav-right a {
   color: black;
   position: relative;
@@ -54,8 +59,13 @@
   padding-bottom: 17px;
 }
 
-.top-nav-right a:hover{
+.signin-signup a:hover{
   border-bottom: #32e580 5px solid;
+}
+
+.logout-search a:hover {
+  color: grey;,
+  border-bottom: none;
 }
 
 .top-nav-right button {
@@ -71,10 +81,6 @@
   padding: 21px 0px 16px 0px;
   border-bottom: #32e580 5px solid;
   cursor: pointer;
-}
-
-.top-nav-right i {
-  margin: 0px 16px;
 }
 
 .top-nav-left {

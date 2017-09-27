@@ -1,8 +1,11 @@
 import React from 'react';
+import ReactQuill from 'react-quill';
+
+// import 'react-quill/dist/quill.snow.css';
 
 class AboutForm extends React.Component{
   render(){
-    const {fieldVals, saveValues} = this.props;
+    const {fieldVals, saveAboutValue} = this.props;
     const {about} = this.props.fieldVals;
     return(
       <div className='project-new-partial'>
@@ -10,7 +13,10 @@ class AboutForm extends React.Component{
         <h4>Get specific about why people should be excited about your project.</h4>
         <form>
           <label>Project Description</label><br />
-          <textarea onChange={saveValues('about')} value={about}></textarea>
+          <ReactQuill value={about}
+                      onChange={saveAboutValue}
+                      placeholder='Tell people about your project here'/>
+
         </form>
       </div>
     );
@@ -18,3 +24,10 @@ class AboutForm extends React.Component{
 }
 
 export default AboutForm;
+//
+// const modules = {
+//   toolbar: [
+//     ['bold', 'italic', 'underline', 'strike'],
+//     [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+//   ]
+// }

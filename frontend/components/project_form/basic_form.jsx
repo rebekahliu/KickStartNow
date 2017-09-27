@@ -40,7 +40,7 @@ class BasicForm extends React.Component{
   }
 
   render(){
-    const {fieldVals, saveValues} = this.props;
+    const {fieldVals, saveValues, changeForm} = this.props;
     const {title, description, category_id, end_date, goal_amount, image_url} = this.props.fieldVals;
     return(
       <div className='project-new-partial'>
@@ -49,34 +49,46 @@ class BasicForm extends React.Component{
           <form>
 
             <div>
-              <div className="image-upload">
-                <Dropzone
-                  className='dropzone'
-                  multiple={false}
-                  accept="image/*"
-                  onDrop={this.onImageDrop}>
-                  Drop an image or click to select a file to upload.
-                </Dropzone>
-              </div>
-
-              <div className='image-show'>
-                {image_url === '' ? null :
-                  <div>
-                    <p>{this.state.uploadedFile.name}</p>
-                    <img src={image_url} />
-                  </div>}
-                </div>
-              </div>
 
             <label>Category</label><br />
-            <input type="number" onChange={saveValues('category_id')} value={category_id}></input>
+              <select onChange={saveValues('category_id')} defaultValue='0' value={category_id}>
+                <option disabled value='0'>--select a category--</option>
+                <option value='1'>Art</option>
+                <option value='2'>Comic</option>
+                <option value='3'>Craft</option>
+                <option value='4'>Food</option>
+                <option value='5'>Fashion</option>
+                <option value='6'>Film & Video</option>
+                <option value='7'>Game</option>
+                <option value='8'>Photography</option>
+                <option value='9'>Technology</option>
+              </select>
             <br />
 
             <label>Title</label><br />
             <input onChange={saveValues('title')} value={title}></input>
             <br />
 
-            <label>Description</label><br />
+            <div className="image-upload">
+              <Dropzone
+                className='dropzone'
+                multiple={false}
+                accept="image/*"
+                onDrop={this.onImageDrop}>
+                Drop an image or click to select a file to upload.
+              </Dropzone>
+            </div>
+
+            <div className='image-show'>
+              {image_url === '' ? null :
+                <div>
+                  <p>{this.state.uploadedFile.name}</p>
+                  <img src={image_url} />
+                </div>}
+              </div>
+            </div>
+
+            <label>Short Blurb</label><br />
             <input onChange={saveValues('description')} value={description}></input>
             <br />
 
@@ -85,8 +97,9 @@ class BasicForm extends React.Component{
             <br />
 
             <label>Goal Amount</label><br />
-            <input type="number" onChange={saveValues('goal_amount')} value={goal_amount}></input>
+            <input type="number" onChange={saveValues('goal_amount')} value={goal_amount}></input><br />
 
+            <button onClick={changeForm('rewards')}>Save and Continue</button>
           </form>
       </div>
     );

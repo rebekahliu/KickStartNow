@@ -10,12 +10,12 @@ class ProjectForm extends React.Component{
     super(props);
     this.state = {
       step: 0,
-      title: "hello",
+      title: "",
       description: "",
       about: "",
-      category_id: 0,
+      category_id: "0",
       end_date: "",
-      goal_amount: 0,
+      goal_amount: 100,
       user_id: "",
       image_url: "",
       rewards: [{
@@ -32,13 +32,14 @@ class ProjectForm extends React.Component{
     this.saveImageURL = this.saveImageURL.bind(this);
     this.saveRewardValues = this.saveRewardValues.bind(this);
     this.handleAddReward = this.handleAddReward.bind(this);
+    this.saveAboutValue = this.saveAboutValue.bind(this);
   }
 
-  componentWillMount(){
-    if (this.props.formType === 'update'){
-      this.setState(this.props.project);
-    }
-  }
+  // componentWillMount(){
+  //   if (this.props.match.path.includes('update')){
+  //     this.setState(this.props.projects[this.props.match.params.projectId]);
+  //   }
+  // }
 
   changeForm(type){
     return (e) => {
@@ -58,6 +59,10 @@ class ProjectForm extends React.Component{
       e.preventDefault();
       this.setState({[type]: e.target.value});
     };
+  }
+
+  saveAboutValue(value){
+    this.setState({about: value});
   }
 
   saveRewardValues(type, idx){
@@ -130,18 +135,21 @@ class ProjectForm extends React.Component{
       case 1:
         return <BasicForm fieldVals={this.state}
                           saveValues={this.saveValues}
-                          saveImageURL={this.saveImageURL}/>;
+                          saveImageURL={this.saveImageURL}
+                          changeForm={this.changeForm}/>;
       case 2:
         return <RewardsForm fieldVals={this.state}
                             saveRewardValues={this.saveRewardValues}
-                            handleAddReward={this.handleAddReward}/>;
+                            handleAddReward={this.handleAddReward}
+                            changeForm={this.changeForm}/>;
       case 3:
         return <AboutForm fieldVals={this.state}
-                          saveValues={this.saveValues}/>;
+                          saveAboutValue={this.saveAboutValue}/>;
     }
   }
 
   render(){
+    console.log(this.state);
     return(
       <div className='project-new-page'>
         <div className='project-new-wrapper'>

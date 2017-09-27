@@ -23,7 +23,7 @@ class Search extends React.Component {
 
   searchProjects(){
     Object.values(this.props.projects).map((project) => (
-      <ProjectIndexItem project={project} />
+      <ProjectIndexItem project={project} key={project.id}/>
     ));
   }
 

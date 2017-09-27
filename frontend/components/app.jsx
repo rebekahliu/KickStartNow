@@ -15,8 +15,8 @@ const App = () => (
   <div className='site'>
     <div className='header'>
       <Switch>
-        <Route path='/' component={GreetingContainer} />
         <Route exact path='/search' component={SearchContainer} />
+        <Route path='/' component={GreetingContainer} />
       </Switch>
     </div>
 
@@ -25,16 +25,16 @@ const App = () => (
 
       <Switch>
         <Route exact path='/search' component={ProjectIndexContainer} />
-        <ProtectedRoute path='/project/new' component={ProjectFormContainer}/>
-        <ProtectedRoute path='/project/update' component={ProjectFormContainer}/>
         <Route exact path="/projects/:projectId" component={ProjectShowContainer} />
-        <Route exact path='/' component={ProjectIndexContainer} />
         <Route exact path='/categories' component={CategoryIndexContainer} />
         <Route exact path='/categories/:categoryId' component={CategoryShowContainer} />
+        <Route exact path='/' component={ProjectIndexContainer} />
+        <ProtectedRoute path='/project/new' component={ProjectFormContainer}/>
+        <ProtectedRoute path='/project/update/:projectId' component={ProjectFormContainer}/>
+        <AuthRoute path='/login' component={SessionFormContainer} />
+        <AuthRoute path='/signup' component={SessionFormContainer} />
       </Switch>
 
-      <AuthRoute path='/login' component={SessionFormContainer} />
-      <AuthRoute path='/signup' component={SessionFormContainer} />
     </div>
 
     <footer>
