@@ -1,7 +1,6 @@
 import React from 'react';
 import {daysToGo, totalBacked, percentFunded} from '../../util/project_util';
-import {Link} from 'react-router-dom';
-import RewardItemContainer from '../reward/reward_container';
+import { HashLink as Link } from 'react-router-hash-link';import RewardItemContainer from '../reward/reward_container';
 import ReactHtmlParser from 'react-html-parser';
 import BackingFormContainer from '../backing/backing_form_container';
 
@@ -102,7 +101,7 @@ class ProjectShow extends React.Component{
                   <span>pledged of ${project.goal_amount} goal</span>
                   <h2>{daysToGo(project.end_date)}</h2>
                   <span>days to go</span><br />
-                  <button>Back Project</button>
+                  <Link to='#back-this-project'>Back this project</Link>
                   {this.protectedButtons()}
                 </div>
               </div>
@@ -115,6 +114,7 @@ class ProjectShow extends React.Component{
             <span>{ReactHtmlParser(project.about)}</span>
           </div>
           <div className='project-show-rewards'>
+            <a id='back-this-project'></a>
             <h2>Support this project</h2>
             <BackingFormContainer project={project} />
             {this.rewardIndex()}

@@ -125,6 +125,10 @@
   text-align: center;
 }
 
+.col-container a:hover {
+  cursor: pointer;
+}
+
 .project-show-details {
   padding: 0px 100px;
   display: flex;
