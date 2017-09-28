@@ -76,8 +76,18 @@
   margin-left: 36px;
 }
 
+.progress-bar-container {
+  display: flex;
+}
+
 .progress-bar {
   border-top: 3px #2BDE73 solid;
+  margin-bottom: 30px;
+  margin-bottom: 0px;
+}
+
+.negative-bar {
+  border-top: 3px #e5e5e5 solid;
   margin-bottom: 30px;
 }
 

@@ -68,6 +68,15 @@ class ProjectShow extends React.Component{
     }
   }
 
+  negativeBar(){
+    const {project} = this.props;
+    if (percentFunded(project.goal_amount, project.backings) === 0){
+      return {width: '100%'};
+    } else {
+      return {width: `${100 - percentFunded(project.goal_amount, project.backings)}%`};
+    }
+  }
+
   render(){
     const {project, removeProject, rewards,  createBacking, match} = this.props;
 
@@ -95,7 +104,10 @@ class ProjectShow extends React.Component{
             </div>
             <div className='col-2-3'>
               <div className='col-container'>
-                <div className='progress-bar' style={this.progressBar()}></div>
+                <div className='progress-bar-container'>
+                  <div className='progress-bar' style={this.progressBar()}></div>
+                  <div className='negative-bar' style={this.negativeBar()}></div>
+                </div>
                 <div className='project-show-sidebar'>
                   <h1>${totalBacked(project.backings)}</h1>
                   <span>pledged of ${project.goal_amount} goal</span>
