@@ -21,18 +21,26 @@
     }
 
     .index-item-details {
-      padding: 30px;
+      padding: 18px 30px;
 
       .index-item-category {
         margin-bottom: 12px;
         color: #626369;
       }
 
-      .index-item-title {
+      .index-item-top {
         font-family: 'Nunito', sans-serif;
         font-size: 18px;
         line-height: 130%;
         margin-bottom: 18px;
+
+        .index-item-title {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          color: #95959E;
+        }
 
         img {
           height: 20px;

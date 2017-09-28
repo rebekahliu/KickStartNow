@@ -30,9 +30,11 @@ class ProjectIndexItem extends React.Component{
         </ Link>
         <div className='index-item-details'>
           <div className='index-item-category'>{project.category}</div>
-          <div className='index-item-title'>
-            <Link to={`/projects/${project.id}`}>{project.title}:</Link>
-            <span id='clampjs'> {project.description}</span><br />
+          <div className='index-item-top'>
+            <div className='index-item-title'>
+              <Link to={`/projects/${project.id}`}>{project.title}:</Link>
+              <span id='clampjs'> {project.description}</span><br />
+            </div>
             <span>
               <img src='https://res.cloudinary.com/rebekahliu/image/upload/r_0/v1506287036/missing_user_avatar_kxjowu.png' /> by
             </span>
