@@ -8,14 +8,47 @@
   border-radius: 2px;
   position: relative;
   font-weight: 100;
-}
 
-.reward-item button {
-  background-color: inherit;
-}
+  #pledge-info-overlay {
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding: 0;
+    transition: opacity .5s;
+    background-color: #2BDE73;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.reward-item button {
-  cursor: pointer;
+    p {
+    color: white;
+    font-size: 18px;
+    font-weight: lighter;
+    }
+  }
+
+  &:hover {
+    #pledge-info-overlay {
+      opacity: .9;
+      transition: opacity .5s;
+      cursor: pointer;
+    }
+  }
+
+  button {
+    background-color: inherit;
+  }
+
+  button:focus {
+    outline : 0;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
 }
 
 .pledge-info button {
@@ -40,6 +73,7 @@
   margin: 0px 20px;
   padding: 20px 0px;
   text-align: left;
+  position: relative;
 }
 
 .reward-item h2 {

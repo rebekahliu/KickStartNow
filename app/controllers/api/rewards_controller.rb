@@ -10,6 +10,10 @@ class Api::RewardsController < ApplicationController
     end
   end
 
+  def show
+    @reward = Reward.new(reward)
+  end
+
   private
 
   def reward_params

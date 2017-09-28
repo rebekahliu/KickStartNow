@@ -113,6 +113,8 @@ class ProjectShow extends React.Component{
                   <span>pledged of ${project.goal_amount} goal</span>
                   <h2>{daysToGo(project.end_date)}</h2>
                   <span>days to go</span><br />
+                  <h2>{project.backings.length}</h2>
+                  <span>backers</span>
                   <Link to='#back-this-project'>Back this project</Link>
                   {this.protectedButtons()}
                 </div>

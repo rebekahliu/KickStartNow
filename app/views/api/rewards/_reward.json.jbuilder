@@ -4,3 +4,5 @@ json.extract! reward, :id,
                       :pledge_amount,
                       :estimated_delivery,
                       :project_id
+
+json.backingUserIds reward.backing_users.pluck(:id)
