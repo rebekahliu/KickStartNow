@@ -3,6 +3,15 @@ import {Link} from 'react-router-dom';
 import {daysToGo, totalBacked, percentFunded} from '../../util/project_util';
 
 class ProjectIndexItem extends React.Component{
+  progressBar(){
+    const {project} = this.props;
+    if (percentFunded(project.goal_amount, project.backings) > 100){
+      return {width: '100%'};
+    } else {
+      return {width: `${percentFunded(project.goal_amount, project.backings)}%`};
+    }
+  }
+
   render(){
     const {project} = this.props;
     return(
@@ -22,6 +31,7 @@ class ProjectIndexItem extends React.Component{
           </div>
           <div className='index-item-details-bottom'>
             <div className='index-item-details-bottom-info'>
+              <div className='progress-bar' style={this.progressBar()}></div>
               <span className='index-item-bold'>${totalBacked(project.backings)}</span>
               <span> pledged</span><br />
               <span className='index-item-bold'>{percentFunded(project.goal_amount, project.backings)}%</span>

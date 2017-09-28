@@ -25,7 +25,7 @@ class NewCarousel extends React.Component {
         </div>
 
         <div className='carousel'>
-          <img src="http://res.cloudinary.com/rebekahliu/image/upload/v1506556796/nature-branches-leaf-leaves_tks96f.jpg" />
+          <img src="http://res.cloudinary.com/rebekahliu/image/upload/v1506561528/green-1738220_1920_ie2fpb.jpg" />
           <div className='carousel-slide-3'>
             <span>Add something new to your collection</span> <br />
             <Link to='/categories'>Explore</Link>
