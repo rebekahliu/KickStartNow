@@ -1,8 +1,8 @@
 .carousel{
-  // min-height:
   height: 700px;
   display: flex;
-  // justify-content: center;
+  justify-content: center;
+  align-items: center;
   font-family: 'Open Sans', sans-serif;
   position: relative;
 
@@ -54,7 +54,7 @@
     font-family: 'Helvetica';
     font-weight: bold;
     position: absolute;
-    top: 35%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #050b38;
