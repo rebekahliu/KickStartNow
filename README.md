@@ -7,4 +7,4 @@ Kickstartnow is a single page app inspired by Kickstarter and created using a Re
 ![Kickstartnow Home Page][index]
 
 [heroku]: https://kickstartnow.herokuapp.com/
-[index]: .app/assets/images/home-screen.png
+[index]: https://github.com/rebekahliu/KickStartNow/blob/master/app/assets/images/home-screen.png
