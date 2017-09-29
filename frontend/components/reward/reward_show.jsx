@@ -43,7 +43,7 @@ class RewardItem extends React.Component{
     const {backingUserIds} = this.props.reward;
     if (this.props.currentUser){
       if (backingUserIds.includes(this.props.currentUser.id)) {
-        return <p>You've backed this!</p>;
+        return <p className='backed'>You've backed this!</p>;
       }
     }
   }

@@ -40,6 +40,8 @@
 
   button {
     background-color: inherit;
+    padding: 0px;
+    display: flex;
   }
 
   button:focus {
@@ -74,6 +76,10 @@
   padding: 20px 0px;
   text-align: left;
   position: relative;
+
+  .backed {
+    margin-bottom: 0px;
+  }
 }
 
 .reward-item h2 {

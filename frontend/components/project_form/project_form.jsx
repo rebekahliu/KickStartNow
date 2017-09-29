@@ -144,7 +144,8 @@ class ProjectForm extends React.Component{
                             changeForm={this.changeForm}/>;
       case 3:
         return <AboutForm fieldVals={this.state}
-                          saveAboutValue={this.saveAboutValue}/>;
+                          saveAboutValue={this.saveAboutValue}
+                          handleSubmit={this.handleSubmit}/>;
     }
   }
 

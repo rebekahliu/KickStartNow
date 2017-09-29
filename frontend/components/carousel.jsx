@@ -8,7 +8,7 @@ import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
 class NewCarousel extends React.Component {
   render() {
     return (
-      <Carousel showStatus={false} showThumbs={false} infiniteLoop={true} autoPlay={true}>
+      <Carousel showStatus={false} showThumbs={false} infiniteLoop={true} autoPlay={true} showArrows={false}>
         <div className="carousel">
           <img src="http://res.cloudinary.com/rebekahliu/image/upload/c_fill,h_1078,w_1500/v1506441441/sea-2755908_1920_yj46cq.jpg" />
           <div className='carousel-slide-1'>
@@ -16,6 +16,7 @@ class NewCarousel extends React.Component {
             <h3>Use kickstarter to explore the bounds of creativity</h3>
           </div>
         </div>
+
         <div className='carousel'>
           <img src="http://res.cloudinary.com/rebekahliu/image/upload/v1506556498/pexels-photo-278810_ixcmhy.jpg" />
           <div className='carousel-slide-2'>
