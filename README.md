@@ -87,6 +87,11 @@ I implemented a live search for kickstartnow that responds to each change in the
 
 ![search][search]
 
+## Future Directions
+
+* users should be able to like/favorite projects
+* users should also have a profile page where they can view the projects they've created/backed/saved
+* users should be able to pay by credit card
 
 [heroku]: https://kickstartnow.herokuapp.com/
 [index]: https://github.com/rebekahliu/KickStartNow/blob/master/app/assets/images/home-screen.png
