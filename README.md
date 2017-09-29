@@ -1,24 +1,10 @@
-# README
+# Kickstartnow
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Kickstartnow live][heroku]
 
-Things you may want to cover:
+Kickstartnow is a single page app inspired by Kickstarter and created using a React/Redux frontend and Ruby on Rails backend. Users can sign up to create and back projects.
 
-* Ruby version
+![Kickstartnow Home Page][index]
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[heroku]: https://kickstartnow.herokuapp.com/
+[index]: .app/assets/images/home-screen.png
