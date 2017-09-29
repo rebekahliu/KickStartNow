@@ -55,7 +55,7 @@ project1 = Project.create(
   goal_amount: 7000,
   end_date: "1/1/2019",
   category_id: category3.id,
-  image_url: 'http://res.cloudinary.com/rebekahliu/image/upload/c_fill,h_576,w_1024/v1506441399/hot-2574466_1920_jfbyb6.jpg'
+  image_url: 'https://res.cloudinary.com/rebekahliu/image/upload/c_fill,h_576,w_1024/v1506441399/hot-2574466_1920_jfbyb6.jpg'
 )
 
 project2 = Project.create(
@@ -77,7 +77,7 @@ project3 = Project.create(
   goal_amount: 10000,
   end_date: "8/10/2019",
   category_id: category4.id,
-  image_url: 'http://res.cloudinary.com/rebekahliu/image/upload/c_fill,h_576,w_1024/v1506441398/hot-chocolate-1782623_1920_l6ta6d.jpg'
+  image_url: 'https://res.cloudinary.com/rebekahliu/image/upload/c_fill,h_576,w_1024/v1506441398/hot-chocolate-1782623_1920_l6ta6d.jpg'
 )
 
 project4 = Project.create(
@@ -154,7 +154,7 @@ project10 = Project.create(
   goal_amount: 10000,
   end_date: "1/1/2019",
   category_id: category8.id,
-  image_url: 'http://res.cloudinary.com/rebekahliu/image/upload/c_fill,h_576,w_1024/v1506441398/magnifying-glass-2598507_1920_ed95vl.jpg'
+  image_url: 'https://res.cloudinary.com/rebekahliu/image/upload/c_fill,h_576,w_1024/v1506441398/magnifying-glass-2598507_1920_ed95vl.jpg'
 )
 
 project11 = Project.create(
@@ -165,7 +165,7 @@ project11 = Project.create(
   goal_amount: 4000,
   end_date: "1/1/2019",
   category_id: category9.id,
-  image_url: 'http://res.cloudinary.com/rebekahliu/image/upload/c_fill,h_576,w_1024/v1506704884/phone-690091_1920_mlam4y.jpg'
+  image_url: 'https://res.cloudinary.com/rebekahliu/image/upload/c_fill,h_576,w_1024/v1506704884/phone-690091_1920_mlam4y.jpg'
 )
 
 project12 = Project.create(
@@ -176,7 +176,7 @@ project12 = Project.create(
   goal_amount: 3000,
   end_date: "1/1/2019",
   category_id: category5.id,
-  image_url: 'http://res.cloudinary.com/rebekahliu/image/upload/c_fill,h_576,w_1024/v1506705592/tie-642063_1920_ltrdey.jpg'
+  image_url: 'https://res.cloudinary.com/rebekahliu/image/upload/c_fill,h_576,w_1024/v1506705592/tie-642063_1920_ltrdey.jpg'
 )
 
 reward1_1 = Reward.create(

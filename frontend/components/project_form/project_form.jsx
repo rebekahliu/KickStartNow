@@ -99,7 +99,7 @@ class ProjectForm extends React.Component{
     project['goal_amount'] = parseInt(project['goal_amount']);
     project['user_id'] = this.props.currentUser.id;
     this.props.processForm(project)
-      .then(() => this.state.rewards.forEach((reward) => this.props.createReward(reward, this.props.project.id)))
+      .then(() => this.state.rewards.forEach((reward) => this.props.processReward(reward, this.props.project.id)))
       .then(() => this.props.history.push(`/projects/${this.props.project.id}`));
   }
 

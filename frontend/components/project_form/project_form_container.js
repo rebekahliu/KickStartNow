@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import {createProject, updateProject} from '../../actions/project_actions';
-import {createReward} from '../../actions/reward_actions';
+import {createReward, updateReward} from '../../actions/reward_actions';
 import ProjectForm from './project_form';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -13,7 +13,9 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   processForm: ownProps.location.pathname.includes('new') ?
     project => dispatch(createProject(project)) :
     project => dispatch(updateProject(project)),
-  createReward: (reward, project_id) => dispatch(createReward(reward, project_id))
+  processReward: ownProps.location.pathname.includes('new') ?
+    reward => dispatch(createReward(reward)) :
+    reward => dispatch(updateReward(reward))
 });
 
 export default connect(
