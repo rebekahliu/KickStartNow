@@ -12,8 +12,6 @@ class ProjectIndex extends React.Component{
   }
 
   componentWillReceiveProps(nextProps){
-    // console.log(this.props);
-    // console.log('nextProps', nextProps);
     if (this.props.match.path !== nextProps.match.path){
       this.props.getProjects();
     }
