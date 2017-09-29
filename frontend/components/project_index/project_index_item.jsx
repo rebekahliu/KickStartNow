@@ -61,9 +61,3 @@ class ProjectIndexItem extends React.Component{
 }
 
 export default ProjectIndexItem;
-
-
-// <script>
-//   var description = document.getElementById("clampjs");
-//   $clamp(description, {clamp: 3});
-// </script>

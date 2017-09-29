@@ -12,6 +12,7 @@ class RewardItem extends React.Component{
 
     this.handleClick = this.handleClick.bind(this);
     this.backers = this.backers.bind(this);
+    this.backed = this.backed.bind(this);
   }
 
   handleClick(e){
@@ -40,8 +41,10 @@ class RewardItem extends React.Component{
 
   backed(){
     const {backingUserIds} = this.props.reward;
-    if (backingUserIds.includes(this.props.currentUser.id)) {
-      return <p>You've backed this!</p>;
+    if (this.props.currentUser){
+      if (backingUserIds.includes(this.props.currentUser.id)) {
+        return <p>You've backed this!</p>;
+      }
     }
   }
 
